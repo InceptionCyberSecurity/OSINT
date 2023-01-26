@@ -1,10 +1,5 @@
-Apps installed are :-
-
-nmap nikto dnsmap dnsrecon dirb hydra-gtk hydra wafw00f dmitry netcat sqlmap
-
-dnswalk whatweb ike-scan nikto wafw00f wapiti dnsenum smbmap spiderfoot reconftw
-
-amass sn1per tecmint-monitor SecLists 
+Best to run these through TL-OSINT in VirtualBox. See https://www.tracelabs.org/initiatives/osint-vm
+Apps installed are OSINT Tools.
 
 
 Dependencies, System Tools and Libraries installed are:-
@@ -18,3 +13,5 @@ geoip-database monit debsums auditd sysstat unattended-upgrades traceroute
 
 SSH
 use port 1965
+
+run osint.sh e.g. ./osint.sh mytarget.com myDirectory

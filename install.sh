@@ -17,22 +17,22 @@ sleep 10
 sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
 sleep 2
-sudo apt install git nmap nikto dnsmap dnsrecon curl ruby perl php dirb hydra-gtk docker apparmor chkrootkit clamav clamav-daemon -y
+sudo apt install git dnsmap dnsrecon curl ruby perl php docker apparmor chkrootkit clamav clamav-daemon -y
 sleep 2
-sudo apt install ufw fail2ban hydra net-tools dnsutils openssl python3 python2.7 xsltproc libxml2-utils python3-pip python2.7-dev python-docutils -y
+sudo apt install ufw fail2ban net-tools dnsutils openssl python3 python2.7 xsltproc libxml2-utils python3-pip python2.7-dev python-docutils -y
 sleep 2
 sudo apt install inetutils-traceroute geoip-bin geoip-database python3-dnspython python3-tld python3-geoip python3-whois python3-requests -y
 sleep 2
-sudo apt install python3-ssdeep software-properties-common monit debsums auditd wafw00f dmitry apt-transport-https sysstat -y
+sudo apt install python3-ssdeep software-properties-common monit debsums auditd dmitry apt-transport-https sysstat -y
 sleep 2
-sudo apt install unattended-upgrades netcat apt-show-versions sqlmap dnswalk traceroute whatweb ike-scan nikto wafw00f wapiti dnsenum smbmap -y
+sudo apt install unattended-upgrades  apt-show-versions dnswalk traceroute wapiti dnsenum  -y
 sleep 2
 sudo add-apt-repository universe -y
 sleep 2
 # openvpn
-wget https://git.io/vpn -O openvpn-install.sh
-sudo chmod +x openvpn-install.sh
-sudo bash openvpn-install.sh
+# wget https://git.io/vpn -O openvpn-install.sh
+# sudo chmod +x openvpn-install.sh
+# sudo bash openvpn-install.sh
 #
 curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
 chmod +x get-pip.py
