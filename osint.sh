@@ -19,7 +19,7 @@ dnsenum $userIP
 
 # theHarvester
 theHarvester -d $userIP -l 200 -b bing
-
+ 
 # twint
 twint -u $uname --followers --user-full
 
