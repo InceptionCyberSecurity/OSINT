@@ -6,19 +6,32 @@
 # Second Argument $2: $uport port number
 # third argumnet $3 mydir
 # User Input from  command line arguments
-userIP="$1" # IP address eg 8.8.8.8
+userIP="$1" # target URL eg. google.com
 uport="$2" # uport
 udir="$3" # directory for reports
-
+uname="$4" # unsername for social media
+umail="$5" # email to search for
 # finalrecon
+python3 finalrecon.py --full $userIP
 
 # dnsenum
+dnsenum $userIP
 
 # theHarvester
-
-# maltego??
+theHarvester -d $userIP -l 200 -b bing
 
 # twint
+twint -u $uname --followers --user-full
+
+# Sherlock see https://github.com/sherlock-project/sherlock#installation
+python3 sherlock $uname
+# python3 sherlock user1 user2 user3
+
+# Ashok see https://www.geeksforgeeks.org/ashok-osint-recon-tool-in-kali-linux/
+python3 Ashok.py --headers https://$userIP
+
+# MOSINT see https://www.geeksforgeeks.org/mosint-osint-tool-for-emails-in-kali-linux/
+python3 mosint.py -e $umail
 
 # all dns
 sudo nmap -p - --script dns* $userIP -oX dns.xml
@@ -30,6 +43,8 @@ cd root
 mkdir $udir
 cd $udir
 mv /root/dns.html /root/$udir/dns.html
+
+
 echo " Your results are stored in directory $udir "
 sleep 10
 cd /
