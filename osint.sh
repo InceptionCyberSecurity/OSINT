@@ -1,7 +1,7 @@
 #!/bin/bash
 # use only for Hyperion v3.1 on Ubuntu 21.04
 # Script for Hyperion v3.x that tests ftp servers
-# Usage ./ftp.sh 8.8.8.8 port mydir - as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
+# Usage ./ftp.sh 8.8.8.8 port mydir uname umail - as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
 # First argument $1: $usIP user IP
 # Second Argument $2: $uport port number
 # third argumnet $3 mydir
@@ -19,7 +19,7 @@ dnsenum $userIP
 
 # theHarvester
 theHarvester -d $userIP -l 200 -b bing
- 
+
 # twint
 twint -u $uname --followers --user-full
 
