@@ -10,21 +10,6 @@ userIP="$1" # IP address eg 8.8.8.8
 uport="$2" # uport
 udir="$3" # directory for reports
 
-# all ftp
-sudo nmap -p 21, 22, 990, 989, $uport --script vulns --script vulners --script ftp* $userIP -oX ftp.xml
-xslproc ftp.xml -o ftp.html
-
-# local storage ready for upload to client's container
-cd /
-cd root
-mkdir $udir
-cd $udir
-mv /root/ftp.html /root/$udir/ftp.html
-echo " Your results are stored in directory $udir "
-sleep 10
-cd /
-cd root
-
 # finalrecon
 
 # dnsenum
@@ -34,3 +19,18 @@ cd root
 # maltego??
 
 # twint
+
+# all dns
+sudo nmap -p - --script dns* $userIP -oX dns.xml
+xslproc dns.xml -o dns.html
+
+# local storage ready for upload to client's container
+cd /
+cd root
+mkdir $udir
+cd $udir
+mv /root/dns.html /root/$udir/dns.html
+echo " Your results are stored in directory $udir "
+sleep 10
+cd /
+cd root
