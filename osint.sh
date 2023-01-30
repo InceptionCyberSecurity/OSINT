@@ -7,7 +7,7 @@
 # third argumnet $3 mydir
 # User Input from  command line arguments
 userIP="$1" # target URL eg. google.com
-uport="$2" # uport
+uport="$2" # user port
 udir="$3" # directory for reports
 uname="$4" # unsername for social media
 umail="$5" # email to search for
@@ -37,13 +37,17 @@ python3 mosint.py -e $umail
 sudo nmap -p - --script dns* $userIP -oX dns.xml
 xslproc dns.xml -o dns.html
 
+# all Discovery
+sudo nmap -p - --script discovery $userIP -oX disc.xml
+xslproc disc.xml -o disc.html
+
 # local storage ready for upload to client's container
 cd /
 cd root
 mkdir $udir
 cd $udir
 mv /root/dns.html /root/$udir/dns.html
-
+mv /root/disc.html /root/$udir/disc.html
 
 echo " Your results are stored in directory $udir "
 sleep 10
