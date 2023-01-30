@@ -1,14 +1,13 @@
 #!/bin/bash
-# Hyperion v2.1 Summer 2021 by ducatinat nathan.jones@janustests.com; Ubuntu 21.04 Germany server
+# OSINT and Scanning Hyperion v3.1 2023 by ducatinat nathan.jones@arcadeusops.com; Ubuntu 21.04
 # big.txt in /user/share/wordlists/dirb/ https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/big.txt
-# Shodan API key ljXIxGyEVp2WhK47K5mrF5cbAaPS44fr#
 # Docker https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 #
 cd /
 cd root
 echo " Welcome to the Hyperion v3.1 Installation Script for OSINT/general scanning. Base OS is Ubuntu 21.04. "
 echo " This installation script will setup all requirements, and harden up the base Ubuntu server. "
-echo " "
+echo " Uses Python v3 and Python v2.7. LOOK AT OPTIONS IN COMMENTS!!"
 echo " Installation will automatically start ........ "
 echo " "
 sleep 10
@@ -39,6 +38,9 @@ chmod +x get-pip.py
 python3 get-pip.pysudo
 sudo apt update
 sudo apt upgrade -y
+#
+# python -m pip3 install --upgrade pip
+sudo apt install python3-pip
 #
 pip install --upgrade setuptools
 pip install sslyze
@@ -137,8 +139,8 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 # sudo ufw allow https # for API from front end         sudo ufw allow 443 # for API from front end
 sudo ufw allow ssh
-sudo ufw allow 1965 # CHANGE TO UNUSUAL SSH PORT for added security
-sudo ufw allow 1194 # VPN only
+# sudo ufw allow 1965 # CHANGE TO UNUSUAL SSH PORT for added security
+# sudo ufw allow 1194 # VPN only
 # sudo ufw allow from xxx.xxx.xxx.xx USE FOR VPN ACCESS ONLY
 sudo ufw enable
 sudo systemctl enable ufw

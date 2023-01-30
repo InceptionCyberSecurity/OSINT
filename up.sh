@@ -1,5 +1,5 @@
 #!/bin/bash
-# use only for Hyperion v3.1 on Ubuntu 21.04
+# use only for Hyperion v3.1 on Ubuntu 21.04 
 sudo nmap --script-update
 sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
