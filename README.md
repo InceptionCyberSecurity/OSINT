@@ -1,4 +1,4 @@
-Best to run these through TL-OSINT in VirtualBoxbut Arch?BlackArch Linux or Kali will be fine too.
+Best to run these through TL-OSINT in VirtualBox but Arch/BlackArch Linux or Kali will be fine too.
 See https://www.tracelabs.org/initiatives/osint-vm. Apps installed are OSINT Tools.
 Dependencies, System Tools and Libraries installed are:-
 
