@@ -24,7 +24,7 @@ sudo apt install inetutils-traceroute geoip-bin geoip-database python3-dnspython
 sleep 2
 sudo apt install python3-ssdeep software-properties-common monit debsums auditd dmitry apt-transport-https sysstat -y
 sleep 2
-sudo apt install unattended-upgrades  apt-show-versions dnswalk traceroute wapiti dnsenum  -y
+sudo apt install unattended-upgrades  apt-show-versions dnswalk traceroute wapiti dnsenum -y
 sleep 2
 sudo add-apt-repository universe -y
 sleep 2
@@ -50,7 +50,7 @@ sleep 2
 sudo auditd -s enable
 auditctl -D
 auditctl -a exit,always -F path=/etc/passwd -F perm=wa
-3 auditctl -R /etc/audit/audit.rules
+# auditctl -R /etc/audit/audit.rules
 # seclists for password cracking
 git clone https://github.com/danielmiessler/SecLists.git
 # lynis
@@ -77,6 +77,10 @@ git clone https://github.com/1N3/Sn1per
 cd Sn1per
 sudo ./install.sh
 cd ..
+# Ashok https://github.com/powerexploit/Ashok
+git clone https://github.com/ankitdobhal/Ashok
+cd Ashok
+python3.7 -m pip3 install -r requirements.txt
 sleep 2
 # INSTALL SECURITY REQUIREMENTS to harden up base server
 # Lynis already installed lynis audit system

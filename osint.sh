@@ -6,33 +6,50 @@
 # Second Argument $2: $uport port number
 # third argumnet $3 mydir
 # User Input from  command line arguments
-userIP="$1" # target URL eg. google.com
+userIP="$1" # target URL eg. google.com or IP address
 uport="$2" # user port
 udir="$3" # directory for reports
-uname="$4" # unsername for social media
+uname="$4" # username for social media
 umail="$5" # email to search for
 
 # finalrecon
-python3 finalrecon.py --full $userIP
+python3 finalrecon.py --full $userIP -o finalrec.txt
 
 # dnsenum
-dnsenum $userIP
+dnsenum $userIP -o dnsrec.xml
+xslproc dnsrec.xml -o dnsrec.html
 
 # theHarvester
-theHarvester -d $userIP -l 200 -b bing
+theHarvester -d $userIP -l 200 -b bing -f harvest.xml
+xslproc harvest.xml -o harvest.html
 
 # twint
-twint -u $uname --followers --user-full
+twint -u $uname --followers --user-full --email --phone -o twint.txt
 
 # Sherlock see https://github.com/sherlock-project/sherlock#installation
-python3 sherlock $uname
+python3 sherlock --verbose $uname $umail --output sherly.txt --xlsx sherly.xlsx
 # python3 sherlock user1 user2 user3
+# Accounts found will be stored in an individual text file with the corresponding username (e.g user123.txt).
 
 # Ashok see https://www.geeksforgeeks.org/ashok-osint-recon-tool-in-kali-linux/
-python3 Ashok.py --headers https://$userIP
+python3 Ashok.py --headers --subdomain --dorknumber 10 --cms https://$userIP > ashok.txt
 
 # MOSINT see https://www.geeksforgeeks.org/mosint-osint-tool-for-emails-in-kali-linux/
-python3 mosint.py -e $umail
+# MOSINT API keys
+mosint set hunter <hunter.io API key>
+mosint set emailrep <emailrep.io API key>
+mosint set intelx <intelx.io API key>
+mosint set psbdmp <psbdmp.ws API key>
+mosint set breachdirectory <breachdirectory.org API key>
+python3 mosint.py -e $umail > mosint.txt
+
+# sn1per https://github.com/1N3/Sn1per
+sniper -t $userIP # normal mode
+sniper -t $userIP -o -re # OSINT and RECON
+sniper -t $userIP -m stealth -o -re # Stealth OSINT and RECON
+
+# reconFTW https://github.com/six2dez/reconftw#a-in-your-pcvpsvm
+./reconftw.sh -d $userIP -a -o /root/RFTW
 
 # all dns
 sudo nmap -p - --script dns* $userIP -oX dns.xml
@@ -49,8 +66,16 @@ mkdir $udir
 cd $udir
 mv /root/dns.html /root/$udir/dns.html
 mv /root/disc.html /root/$udir/disc.html
+mv /root/finalrec.txt /root/$udir/finalrec.txt
+mv /root/dnsrec.html /root/$udir/dnsrec.html
+mv /root/harvest.html /root/$udir/harvest.html
+mv /root/twint.txt /root$udir/twint.txt
+mv /root/sherly.txt /root/$udir/sherly.txt
+mv /root/sherly.xlsx /root/$udir/sherly.xlsx
+mv /root/ashok.txt /root/$udir/ashok.txt
+mv /root/mosint.txt /root/$udir/mosint.txt
 
-echo " Your results are stored in directory $udir "
+echo " Your results are stored in directory $udir and /root/RFTW ."
 sleep 10
 cd /
 cd root
