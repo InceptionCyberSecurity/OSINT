@@ -1,7 +1,7 @@
 #!/bin/bash
 # use only for Hyperion v3.1 on Ubuntu 21.04
-# Script for Hyperion v3.x that tests ftp servers
-# Usage ./ftp.sh 8.8.8.8 port mydir uname umail - as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
+# Script for Hyperion v3.x tfor OSINT
+# Usage ./osint.sh 8.8.8.8 port mydir uname umail - as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
 # First argument $1: $usIP user IP
 # Second Argument $2: $uport port number
 # third argumnet $3 mydir
@@ -11,6 +11,7 @@ uport="$2" # user port
 udir="$3" # directory for reports
 uname="$4" # unsername for social media
 umail="$5" # email to search for
+
 # finalrecon
 python3 finalrecon.py --full $userIP
 

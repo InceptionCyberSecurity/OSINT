@@ -10,4 +10,4 @@ SSH
 use port 1965 if you want to be extra sesurity minded.
 
 USAGE
-to run osint.sh e.g. ./osint.sh mytarget.com myDirectory
+./osint.sh 8.8.8.8 port mydir uname umail - as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
