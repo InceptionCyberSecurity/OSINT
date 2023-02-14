@@ -59,6 +59,8 @@ xslproc dns.xml -o dns.html
 sudo nmap -p - --script discovery $userIP -oX disc.xml
 xslproc disc.xml -o disc.html
 
+# trape trackerjacker social-analyzer photon discover torbot nmapAutomator
+
 # local storage ready for upload to client's container
 cd /
 cd root
