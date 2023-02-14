@@ -89,21 +89,21 @@ sleep 2
 # sudo aa-enforce /etc/apparmor.d/* # enforce mode
 # sudo aa-genprof slapd #generate new profile for app called slap
 sleep 2
-systemctl enable apparmor
-systemctl restart apparmor
-sudo apparmor_status > apparmor.txt # look at this after install
+# systemctl enable apparmor
+# systemctl restart apparmor
+# sudo apparmor_status > apparmor.txt # look at this after install
 # Apparmor logs to /var/log/syslog
 # dmseg | grep -i 'apparmor.*denied' /var/log/syslog > apparmor_denied # use this to truncate syslog
 # RAT detection
-chkrootkit > rootkit.txt
+# chkrootkit > rootkit.txt
 # Artillery honeypot
 # blacklist /var/artillery/banlist.txt
 # edit /var/artillery/config to turn on mail delivery
-cd /
-cd root
-sudo git clone https://github.com/BinaryDefense/artillery/ artillery/
-cd artillery
-python3 setup.py # answer Yes to all three questions
+# cd /
+# cd root
+# sudo git clone https://github.com/BinaryDefense/artillery/ artillery/
+# cd artillery
+# python3 setup.py # answer Yes to all three questions
 # configure Artillery as below
 # nano /var/artillery/config
 # change MONITOR_FOLDERS=”/var/www”,”/etc”,"/etc/passwd","/etc/shadow","/root"  for folders to be monitored
@@ -113,47 +113,47 @@ python3 setup.py # answer Yes to all three questions
 # AUTO_UPDATE=ON
 # ANTI_DOS_PORTS=22,80,443,1194
 # ANTI_DOS=ON
-service artillery start
-sudo systemctl enable artillery
+# service artillery start
+# sudo systemctl enable artillery
 # to reset baned IP    cd /var/artilley  and run  ./reset-bans.py xxx.xxx.xxx.xxx
-cd ..
+# cd ..
 # ClamAV malware scanner https://ourcodeworld.com/articles/read/885/how-to-install-clamav-and-scan-for-viruses-with-the-command-line-cli-in-ubuntu-16-04
-sudo systemctl stop clamav-freshclam
-sudo freshclam
-sudo systemctl start clamav-freshclam
+# sudo systemctl stop clamav-freshclam
+# sudo freshclam
+# sudo systemctl start clamav-freshclam
 # sudo clamscan -i --detect-pua=yes -r / # manual scan
 # configure then stop apache2 select Local only for mail setup
-sudo systemctl start apache2
-sudo apt install libapache2-mod-evasive libapache2-mod-security2 -y
+# sudo systemctl start apache2
+# sudo apt install libapache2-mod-evasive libapache2-mod-security2 -y
 # sudo nano /etc/apache2/mods-enabled/evasive.conf the follow https://phoenixnap.com/kb/apache-mod-evasive
 # /etc/apache2/mods-enabled/security2.conf follow https://www.linuxbabe.com/security/modsecurity-apache-debian-ubuntu
-sudo a2enmod security2
-sudo systemctl disable apache2 && sudo systemctl stop apache2
-sudo systemctl stop postfix
+# sudo a2enmod security2
+# sudo systemctl disable apache2 && sudo systemctl stop apache2
+# sudo systemctl stop postfix
 # prevent postfix from booting https://duckduckgo.com/?q=prevent+postfix+from+starting+at+boot&t=newext&atb=v268-1&ia=web
-sudo update-rc.d postfix disable # to restart at boot sudo update-rc.d postfix enable
+# sudo update-rc.d postfix disable # to restart at boot sudo update-rc.d postfix enable
 # logs in /var/logs/mod_evasive
 # continue AppArmor install and server hardening
 # nano /sys/module/apparmor/parameters/enabled and edit as below
 # set to complain mode see https://ubuntu.com/server/docs/security-apparmor sudo aa-complain /path/to/bin
 # set to enforce mode sudo aa-enforce /path/to/bin sudo apparmor_status
-sudo aa-status > apparmor.txt # check apparmor is running
+# sudo aa-status > apparmor.txt # check apparmor is running
 # install UFW and configure https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-20-04
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
+# sudo ufw default deny incoming
+# sudo ufw default allow outgoing
 # sudo ufw allow https # for API from front end         sudo ufw allow 443 # for API from front end
-sudo ufw allow ssh
+# sudo ufw allow ssh
 # sudo ufw allow 1965 # CHANGE TO UNUSUAL SSH PORT for added security
 # sudo ufw allow 1194 # VPN only
 # sudo ufw allow from xxx.xxx.xxx.xx USE FOR VPN ACCESS ONLY
-sudo ufw enable
-sudo systemctl enable ufw
+# sudo ufw enable
+# sudo systemctl enable ufw
 # run sudo ufw status verbose to check ufw is running after install        sudo ufw reset
 # fail2ban https://linuxize.com/post/install-configure-fail2ban-on-ubuntu-20-04/
-sudo cp /etc/fail2ban/jail.{conf,local}
+# sudo cp /etc/fail2ban/jail.{conf,local}
 # sudo nano /etc/fail2ban/jail.local and edit as required
-systemctl enable fail2ban
-system start fail2ban
+# systemctl enable fail2ban
+# system start fail2ban
 # END OF BASE and Security Install
 sleep 2
 cd /
@@ -170,18 +170,17 @@ sudo apt autoclean -y && sudo apt autoremove -y
 clear
 echo " "
 echo " Server is now ready to reboot. Before using Hyperion v3.1 you need to do the following:-"
-echo " "
 echo " 1. Run Lynis audit report after full installation (lynis audit system). Lynis report in /var/log/lynis-report.log. Do what Lynis suggests!"
 echo " A Lynis Hardening Index of 70+ is respectable. See https://blog.ssdnodes.com/blog/tutorial-vps-security-audits-using-lynis/ "
 echo " "
-echo " 2. Look at apparmor.txt and /var/log/syslog to confirm Apparmor is in complain mode, and /var/logs/mod_evasive, and do evasive_mod and mod_security editing."
-echo " "
-echo " 3. Edit /var/artillery/config and change Folders Monitored/Ignored, Honeypot Ports, Whitelist and DOS Protection. "
-echo " "
-echo " 4. Run sudo ufw status verbose to check ufw is running after install. Edit /etc/default/sysstat to TRUE. "
-echo " "
-echo " 5. Test fail2ban according to https://www.howtogeek.com/675010/how-to-secure-your-linux-computer-with-fail2ban/"
-echo " "
+# echo " 2. Look at apparmor.txt and /var/log/syslog to confirm Apparmor is in complain mode, and /var/logs/mod_evasive, and do evasive_mod and mod_security editing."
+# echo " "
+# echo " 3. Edit /var/artillery/config and change Folders Monitored/Ignored, Honeypot Ports, Whitelist and DOS Protection. "
+# echo " "
+# echo " 4. Run sudo ufw status verbose to check ufw is running after install. Edit /etc/default/sysstat to TRUE. "
+# echo " "
+# echo " 5. Test fail2ban according to https://www.howtogeek.com/675010/how-to-secure-your-linux-computer-with-fail2ban/"
+# echo " "
 echo " Happy hacking! "
 echo " "
 read -p " Take note of the above then press enter to reboot the server."
