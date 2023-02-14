@@ -4,6 +4,9 @@ See https://www.tracelabs.org/initiatives/osint-vm.
 Apps installed are OSINT Tools.
 
 INSTALLATION
+OSINT tools are:-
+trape trackerjacker social-analyzer photon discover torbot nmapAutomator Ashok Sn1per reconFTW Spiderfoot
+
 Dependencies, System Tools and Libraries installed are:-
 curl ruby perl php docker apparmor chkrootkit clamav clamav-daemon openssl python3
 python2.7 xsltproc inetutils-traceroute geoip-bin ufw fail2ban net-tools dnsutils

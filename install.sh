@@ -2,7 +2,6 @@
 # OSINT and Scanning Hyperion v3.1 2023 by ducatinat nathan.jones@arcadeusops.com; Ubuntu 21.04
 # big.txt in /user/share/wordlists/dirb/ https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/big.txt
 # Docker https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
-#
 cd /
 cd root
 echo " Welcome to the Hyperion v3.1 Installation Script for OSINT/general scanning. Base OS is Ubuntu 21.04. "
@@ -10,8 +9,7 @@ echo " This installation script will setup all requirements, and harden up the b
 echo " Uses Python v3 and Python v2.7. LOOK AT OPTIONS IN COMMENTS!!"
 echo " Installation will automatically start ........ "
 echo " "
-sleep 10
-#
+sleep 15
 # INSTALL BASE REQUITREMENTS
 sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
@@ -32,24 +30,20 @@ sleep 2
 # wget https://git.io/vpn -O openvpn-install.sh
 # sudo chmod +x openvpn-install.sh
 # sudo bash openvpn-install.sh
-#
 curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
 chmod +x get-pip.py
 python3 get-pip.pysudo
 sudo apt update
 sudo apt upgrade -y
-#
 # python -m pip3 install --upgrade pip
 sudo apt install python3-pip
-#
 pip install --upgrade setuptools
 pip install sslyze
 sudo snap install amass
 sleep 2
-#
-sudo auditd -s enable
-auditctl -D
-auditctl -a exit,always -F path=/etc/passwd -F perm=wa
+# sudo auditd -s enable
+# auditctl -D
+# auditctl -a exit,always -F path=/etc/passwd -F perm=wa
 # auditctl -R /etc/audit/audit.rules
 # seclists for password cracking
 git clone https://github.com/danielmiessler/SecLists.git
@@ -63,6 +57,7 @@ wget https://tecmint.com/wp-content/scripts/tecmint_monitor.sh
 chmod 755 tecmint_monitor.sh
 ./tecmint_monitor.sh -i
 # spiderfoot OSINT
+# NOTE that spiderfoot needs use of https://localhost:5001. See https://github.com/smicallef/spiderfoot
 git clone https://github.com/smicallef/spiderfoot.git
 cd spiderfoot
 pip3 install -r requirements.txt
@@ -82,7 +77,13 @@ git clone https://github.com/ankitdobhal/Ashok
 cd Ashok
 python3.7 -m pip3 install -r requirements.txt
 sleep 2
-# trape trackerjacker social-analyzer photon discover torbot nmapAutomator
+# trape
+# trackerjacker
+# social-analyzer
+# photon
+# discover
+# torbot
+# nmapAutomator
 #
 # INSTALL SECURITY REQUIREMENTS to harden up base server
 # Lynis already installed lynis audit system
