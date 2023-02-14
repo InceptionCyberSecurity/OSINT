@@ -82,6 +82,8 @@ git clone https://github.com/ankitdobhal/Ashok
 cd Ashok
 python3.7 -m pip3 install -r requirements.txt
 sleep 2
+# trape trackerjacker social-analyzer photon discover torbot nmapAutomator
+#
 # INSTALL SECURITY REQUIREMENTS to harden up base server
 # Lynis already installed lynis audit system
 # Lynis report file /var/log/lynis-report.log. Look at Lynis audit report after installation. Do what Lynis suggests!!
