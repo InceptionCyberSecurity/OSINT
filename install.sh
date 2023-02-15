@@ -4,14 +4,14 @@
 # Docker https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 cd /
 cd root
-echo " Welcome to the Hyperion v3.1 Installation Script for OSINT/general scanning. Base OS is Kali Linux. "
+echo " Welcome to the Hyperion v3.1 Installation Script for OSINT/general scanning. Base OS is TL-OSINT. "
 echo " This installation script will setup all requirements. LOOK AT OPTIONS IN COMMENTS!! Installation will automatically start ........ "
 echo " "
 sleep 8
 # INSTALL BASE REQUITREMENTS
 sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
-sudo apt install git dnsrecon curl ruby perl php docker apparmor chkrootkit tor nmap ffuf -y
+sudo apt install dnsrecon curl ruby perl php docker apparmor chkrootkit tor ffuf -y
 sudo apt install ufw fail2ban net-tools dnsutils openssl python3 python2.7 xsltproc libxml2-utils python3-pip python2.7-dev python-docutils -y
 sudo apt install inetutils-traceroute geoip-bin geoip-database python3-dnspython python3-tld python3-geoip python3-whois python3-requests -y
 sudo apt install python3-ssdeep software-properties-common monit debsums auditd apt-transport-https sysstat unattended-upgrades apt-show-versions traceroute setuptools -y
@@ -73,11 +73,6 @@ pip3 install trackerjacker
 # social-analyzer
 sudo apt-get install python3 python3-pip
 pip3 install social-analyzer
-# photon
-git clone https://github.com/s0md3v/Photon.git
-cd Photon
-pip3 install -r requirements.txt
-cd ..
 # discover
 git clone https://github.com/leebaird/discover /opt/discover/
 # torbot
