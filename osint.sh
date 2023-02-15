@@ -12,10 +12,10 @@ wlan="$6" # wifi to scan
 python3 finalrecon.py --full $userIP -o finalrec.txt
 # dnsenum
 dnsenum $userIP -o dnsrec.xml
-xslproc dnsrec.xml -o dnsrec.html
+xsltproc dnsrec.xml -o dnsrec.html
 # theHarvester
 theHarvester -d $userIP -l 200 -b bing -f harvest.xml
-xslproc harvest.xml -o harvest.html
+xsltproc harvest.xml -o harvest.html
 # twint
 twint -u $uname --followers --user-full --email --phone -o twint.txt
 # Sherlock see https://github.com/sherlock-project/sherlock#installation
