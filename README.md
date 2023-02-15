@@ -9,6 +9,8 @@ sudo chmod 777 *.sh
 sudo ./install.sh
 rm install.sh
 
+Make sure that torrc is configured to SOCKS_PORT localhost:9050
+
 # Scripts
 install.sh installs a few extras.
 up.sh updates the base, installed TL-OSINT OS.
