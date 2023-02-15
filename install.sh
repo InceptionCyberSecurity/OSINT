@@ -11,11 +11,12 @@ sleep 8
 # INSTALL BASE REQUITREMENTS
 sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
-sudo apt install git dnsrecon curl ruby perl php docker apparmor chkrootkit
+sudo apt install git dnsrecon curl ruby perl php docker apparmor chkrootkit tor
 sudo apt install ufw fail2ban net-tools dnsutils openssl python3 python2.7 xsltproc libxml2-utils python3-pip python2.7-dev python-docutils
 sudo apt install inetutils-traceroute geoip-bin geoip-database python3-dnspython python3-tld python3-geoip python3-whois python3-requests
 sudo apt install python3-ssdeep software-properties-common monit debsums auditd apt-transport-https sysstat unattended-upgrades apt-show-versions traceroute setuptools
 sudo add-apt-repository universe
+sudo apt install ffuf -y
 # openvpn
 # wget https://git.io/vpn -O openvpn-install.sh
 # sudo chmod +x openvpn-install.sh
@@ -61,13 +62,33 @@ git clone https://github.com/ankitdobhal/Ashok
 cd Ashok
 python3.7 -m pip3 install -r requirements.txt
 clear
+cd ..
 # trape
+git clone https://github.com/jofpin/trape.git
+cd trape
+pip3 install -r requirements.txt
+python3 trape.py -h
+cd ..
 # trackerjacker
+pip3 install trackerjacker
 # social-analyzer
+sudo apt-get update
+sudo apt-get install python3 python3-pip
+pip3 install social-analyzer
 # photon
+git clone https://github.com/s0md3v/Photon.git
+cd photon
+pip3 install -r requirements.txt
+cd ..
 # discover
+git clone https://github.com/leebaird/discover /opt/discover/
 # torbot
+sudo service tor start
+cd gotor && go run cmd/main/main.go -server
+poetry install # to install dependencies
 # nmapAutomator
+git clone https://github.com/21y4d/nmapAutomator.git
+sudo ln -s $(pwd)/nmapAutomator/nmapAutomator.sh /usr/local/bin/
 #
 # INSTALL SECURITY REQUIREMENTS to harden up base server
 # Lynis already installed lynis audit system

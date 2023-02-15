@@ -7,6 +7,7 @@ uport="$2" # user port
 udir="$3" # directory for reports
 uname="$4" # username for social media
 umail="$5" # email to search for
+wlan="$6" # wifi to scan
 # finalrecon
 python3 finalrecon.py --full $userIP -o finalrec.txt
 # dnsenum
@@ -43,13 +44,25 @@ xslproc dns.xml -o dns.html
 # all Discovery
 sudo nmap -p - --script discovery $userIP -oX disc.xml
 xslproc disc.xml -o disc.html
+
+
+# all these need file output
 # trape
+python3 trape.py --url $IP --port $uport
 # trackerjacker
+trackerjacker -i $wlan --map
 # social-analyzer
+python3 -m social-analyzer --username "$uname"
 # photon
+python photon.py -u "$userIP" --clone
 # discover
+cd /opt/discover/
+sudo ./discover.sh
 # torbot
+poetry run python run.py -u https://$userIP --depth 2 -v # example of running command with poetry
+# poetry run python run.py -h # for help
 # nmapAutomator
+./nmapAutomator.sh --host $userIP --type All
 #
 # local storage ready for upload to client's container
 cd /
@@ -66,6 +79,7 @@ mv /root/sherly.txt /root/$udir/sherly.txt
 mv /root/sherly.xlsx /root/$udir/sherly.xlsx
 mv /root/ashok.txt /root/$udir/ashok.txt
 mv /root/mosint.txt /root/$udir/mosint.txt
+# trape trackerjacker socialanalyser photon discover torbot nmapAutomator
 echo " Your results are stored in directory $udir and /root/RFTW ."
 sleep 10
 cd /
