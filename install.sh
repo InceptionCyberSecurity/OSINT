@@ -4,43 +4,29 @@
 # Docker https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 cd /
 cd root
-echo " Welcome to the Hyperion v3.1 Installation Script for OSINT/general scanning. Base OS is Ubuntu 21.04. "
-echo " This installation script will setup all requirements, and harden up the base Ubuntu server. "
-echo " Uses Python v3 and Python v2.7. LOOK AT OPTIONS IN COMMENTS!!"
-echo " Installation will automatically start ........ "
+echo " Welcome to the Hyperion v3.1 Installation Script for OSINT/general scanning. Base OS is ideally Ubuntu 22.04. "
+echo " This installation script will setup all requirements. LOOK AT OPTIONS IN COMMENTS!! Installation will automatically start ........ "
 echo " "
-sleep 15
+sleep 8
 # INSTALL BASE REQUITREMENTS
 sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
-sleep 2
-sudo apt install git dnsmap dnsrecon curl ruby perl php docker apparmor chkrootkit clamav clamav-daemon -y
-sleep 2
-sudo apt install ufw fail2ban net-tools dnsutils openssl python3 python2.7 xsltproc libxml2-utils python3-pip python2.7-dev python-docutils -y
-sleep 2
-sudo apt install inetutils-traceroute geoip-bin geoip-database python3-dnspython python3-tld python3-geoip python3-whois python3-requests -y
-sleep 2
-sudo apt install python3-ssdeep software-properties-common monit debsums auditd dmitry apt-transport-https sysstat -y
-sleep 2
-sudo apt install unattended-upgrades  apt-show-versions dnswalk traceroute wapiti dnsenum -y
-sleep 2
-sudo add-apt-repository universe -y
+sudo apt install git dnsmap dnsrecon curl ruby perl php docker apparmor chkrootkit clamav clamav-daemon
+sudo apt install ufw fail2ban net-tools dnsutils openssl python3 python2.7 xsltproc libxml2-utils python3-pip python2.7-dev python-docutils
+sudo apt install inetutils-traceroute geoip-bin geoip-database python3-dnspython python3-tld python3-geoip python3-whois python3-requests
+sudo apt install python3-ssdeep software-properties-common monit debsums auditd dmitry apt-transport-https sysstat
+sudo apt install unattended-upgrades apt-show-versions dnswalk traceroute wapiti dnsenum setuptools amass
+sudo add-apt-repository universe
 sleep 2
 # openvpn
 # wget https://git.io/vpn -O openvpn-install.sh
 # sudo chmod +x openvpn-install.sh
 # sudo bash openvpn-install.sh
-curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
-chmod +x get-pip.py
-python3 get-pip.pysudo
-sudo apt update
-sudo apt upgrade -y
-# python -m pip3 install --upgrade pip
-sudo apt install python3-pip
-pip install --upgrade setuptools
-pip install sslyze
-sudo snap install amass
-sleep 2
+# install sslyze
+git clone git://github.com/nabla-c0d3/sslyze.git
+cd sslyze
+pip install .
+cd ..
 # sudo auditd -s enable
 # auditctl -D
 # auditctl -a exit,always -F path=/etc/passwd -F perm=wa
