@@ -11,21 +11,20 @@ sleep 8
 # INSTALL BASE REQUITREMENTS
 sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
-sudo apt install git dnsmap dnsrecon curl ruby perl php docker apparmor chkrootkit 
+sudo apt install git dnsrecon curl ruby perl php docker apparmor chkrootkit
 sudo apt install ufw fail2ban net-tools dnsutils openssl python3 python2.7 xsltproc libxml2-utils python3-pip python2.7-dev python-docutils
 sudo apt install inetutils-traceroute geoip-bin geoip-database python3-dnspython python3-tld python3-geoip python3-whois python3-requests
-sudo apt install python3-ssdeep software-properties-common monit debsums auditd dmitry apt-transport-https sysstat
-sudo apt install unattended-upgrades apt-show-versions dnswalk traceroute wapiti dnsenum setuptools amass
+sudo apt install python3-ssdeep software-properties-common monit debsums auditd apt-transport-https sysstat unattended-upgrades apt-show-versions traceroute setuptools
 sudo add-apt-repository universe
 # openvpn
 # wget https://git.io/vpn -O openvpn-install.sh
 # sudo chmod +x openvpn-install.sh
 # sudo bash openvpn-install.sh
 # install sslyze
-git clone git://github.com/nabla-c0d3/sslyze.git
-cd sslyze
-pip install .
-cd ..
+# git clone git://github.com/nabla-c0d3/sslyze.git
+# cd sslyze
+# pip install .
+# cd ..
 # sudo auditd -s enable
 # auditctl -D
 # auditctl -a exit,always -F path=/etc/passwd -F perm=wa
@@ -43,10 +42,10 @@ chmod 755 tecmint_monitor.sh
 ./tecmint_monitor.sh -i
 # spiderfoot OSINT
 # NOTE that spiderfoot needs use of https://localhost:5001. See https://github.com/smicallef/spiderfoot
-git clone https://github.com/smicallef/spiderfoot.git
-cd spiderfoot
-pip3 install -r requirements.txt
-cd ..
+# git clone https://github.com/smicallef/spiderfoot.git
+# cd spiderfoot
+# pip3 install -r requirements.txt
+# cd ..
 # reconFTW https://github.com/six2dez/reconftw#a-in-your-pcvpsvm ./reconftw.sh -d target.com -a -o /root/RFTW
 git clone https://github.com/six2dez/reconftw
 cd reconftw/
