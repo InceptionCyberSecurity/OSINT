@@ -8,6 +8,10 @@ udir="$3" # directory for reports
 uname="$4" # username for social media
 umail="$5" # email to search for
 wlan="$6" # wifi to scan
+#
+echo " These OSINT scripts may take along time to run. Grab a coffee! "
+echo " osint.sh will start automatically. "
+sleep 5
 # finalrecon
 python3 finalrecon.py --full $userIP -o finalrec.txt
 # dnsenum
@@ -45,24 +49,23 @@ xslproc dns.xml -o dns.html
 sudo nmap -p - --script discovery $userIP -oX disc.xml
 xslproc disc.xml -o disc.html
 #
-# all these need file output
 # trape
-python3 trape.py --url $IP --port $uport
+python3 trape.py --url $IP --port $uport > trape.txt
 # trackerjacker
 trackerjacker -i $wlan --map
 # social-analyzer
-python3 -m social-analyzer --username "$uname"
+python3 -m social-analyzer --username "$uname" > socan.txt
 # photon
-python photon.py -u "$userIP" --clone
+python photon.py -u "$userIP" --clone > photon.txt
 # discover
-cd /opt/discover/
-sudo ./discover.sh
+# cd /opt/discover/
+# sudo ./discover.sh
 # torbot
 sudo service tor start # make sure that torrc is configured to SOCKS_PORT localhost:9050
-poetry run python run.py -u https://$userIP --depth 2 -v # example of running command with poetry
+poetry run python run.py -u https://$userIP --depth 2 -v > torbot.txt # example of running command with poetry
 # poetry run python run.py -h # for help
 # nmapAutomator
-./nmapAutomator.sh --host $userIP --type All
+./nmapAutomator.sh --host $userIP --type All > nmA.txt
 #
 # local storage ready for upload to client's container
 cd /
@@ -79,8 +82,13 @@ mv /root/sherly.txt /root/$udir/sherly.txt
 mv /root/sherly.xlsx /root/$udir/sherly.xlsx
 mv /root/ashok.txt /root/$udir/ashok.txt
 mv /root/mosint.txt /root/$udir/mosint.txt
-# trape trackerjacker socialanalyser photon discover torbot nmapAutomator
+mv /root/trape.txt /root/$udir/trape.txt
+mv /root/socan.txt /root/$udir/socan.txt
+mv /root/photon.txt /root/$udir/photon.txt
+mv /root/nmA.txt /root/$udir/nmA.txt.txt
+mv /root/torbot.txt /root/$udir/torbot.txt
+echo " "
 echo " Your results are stored in directory $udir and /root/RFTW ."
-sleep 10
+echo " Use Lee Baird's discover for further analysis. "
 cd /
 cd root
