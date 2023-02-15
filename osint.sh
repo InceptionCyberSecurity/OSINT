@@ -44,8 +44,7 @@ xslproc dns.xml -o dns.html
 # all Discovery
 sudo nmap -p - --script discovery $userIP -oX disc.xml
 xslproc disc.xml -o disc.html
-
-
+#
 # all these need file output
 # trape
 python3 trape.py --url $IP --port $uport
