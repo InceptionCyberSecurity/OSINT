@@ -1,10 +1,6 @@
 #!/bin/bash
-# use only for Hyperion v3.1 on Ubuntu 21.04
-# Script for Hyperion v3.x tfor OSINT
+# use only for Hyperion v3.1 on Ubuntu 21.04m for OSINT
 # Usage ./osint.sh 8.8.8.8 port mydir uname umail - as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
-# First argument $1: $usIP user IP
-# Second Argument $2: $uport port number
-# third argumnet $3 mydir
 # User Input from  command line arguments
 userIP="$1" # target URL eg. google.com or IP address
 uport="$2" # user port

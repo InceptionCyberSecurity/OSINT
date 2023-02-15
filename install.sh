@@ -4,20 +4,19 @@
 # Docker https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 cd /
 cd root
-echo " Welcome to the Hyperion v3.1 Installation Script for OSINT/general scanning. Base OS is ideally Ubuntu 22.04. "
+echo " Welcome to the Hyperion v3.1 Installation Script for OSINT/general scanning. Base OS is Kali Linux. "
 echo " This installation script will setup all requirements. LOOK AT OPTIONS IN COMMENTS!! Installation will automatically start ........ "
 echo " "
 sleep 8
 # INSTALL BASE REQUITREMENTS
 sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
-sudo apt install git dnsmap dnsrecon curl ruby perl php docker apparmor chkrootkit clamav clamav-daemon
+sudo apt install git dnsmap dnsrecon curl ruby perl php docker apparmor chkrootkit 
 sudo apt install ufw fail2ban net-tools dnsutils openssl python3 python2.7 xsltproc libxml2-utils python3-pip python2.7-dev python-docutils
 sudo apt install inetutils-traceroute geoip-bin geoip-database python3-dnspython python3-tld python3-geoip python3-whois python3-requests
 sudo apt install python3-ssdeep software-properties-common monit debsums auditd dmitry apt-transport-https sysstat
 sudo apt install unattended-upgrades apt-show-versions dnswalk traceroute wapiti dnsenum setuptools amass
 sudo add-apt-repository universe
-sleep 2
 # openvpn
 # wget https://git.io/vpn -O openvpn-install.sh
 # sudo chmod +x openvpn-install.sh
@@ -62,7 +61,7 @@ cd ..
 git clone https://github.com/ankitdobhal/Ashok
 cd Ashok
 python3.7 -m pip3 install -r requirements.txt
-sleep 2
+clear
 # trape
 # trackerjacker
 # social-analyzer
@@ -77,14 +76,15 @@ sleep 2
 # sudo aa-complain /etc/apparmor.d/* # complain module
 # sudo aa-enforce /etc/apparmor.d/* # enforce mode
 # sudo aa-genprof slapd #generate new profile for app called slap
-sleep 2
 # systemctl enable apparmor
 # systemctl restart apparmor
 # sudo apparmor_status > apparmor.txt # look at this after install
 # Apparmor logs to /var/log/syslog
 # dmseg | grep -i 'apparmor.*denied' /var/log/syslog > apparmor_denied # use this to truncate syslog
 # RAT detection
-# chkrootkit > rootkit.txt
+echo " Checking for RAT Intrusions........ "
+sleep 2
+chkrootkit > rootkit.txt
 # Artillery honeypot
 # blacklist /var/artillery/banlist.txt
 # edit /var/artillery/config to turn on mail delivery
@@ -144,12 +144,10 @@ sleep 2
 # systemctl enable fail2ban
 # system start fail2ban
 # END OF BASE and Security Install
-sleep 2
 cd /
 cd root
-echo " "
 echo "Hyperion 3.1 system installation is complete. Updating all ... "
-sleep 3
+sleep 2
 # update
 sudo nmap --script-update
 sudo nmap --script-updatedb
@@ -157,20 +155,13 @@ sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
 sudo apt autoclean -y && sudo apt autoremove -y
 clear
-echo " "
 echo " Server is now ready to reboot. Before using Hyperion v3.1 you need to do the following:-"
 echo " 1. Run Lynis audit report after full installation (lynis audit system). Lynis report in /var/log/lynis-report.log. Do what Lynis suggests!"
 echo " A Lynis Hardening Index of 70+ is respectable. See https://blog.ssdnodes.com/blog/tutorial-vps-security-audits-using-lynis/ "
-echo " "
 # echo " 2. Look at apparmor.txt and /var/log/syslog to confirm Apparmor is in complain mode, and /var/logs/mod_evasive, and do evasive_mod and mod_security editing."
-# echo " "
 # echo " 3. Edit /var/artillery/config and change Folders Monitored/Ignored, Honeypot Ports, Whitelist and DOS Protection. "
-# echo " "
 # echo " 4. Run sudo ufw status verbose to check ufw is running after install. Edit /etc/default/sysstat to TRUE. "
-# echo " "
 # echo " 5. Test fail2ban according to https://www.howtogeek.com/675010/how-to-secure-your-linux-computer-with-fail2ban/"
-# echo " "
 echo " Happy hacking! "
-echo " "
-read -p " Take note of the above then press enter to reboot the server."
+read -p " Take note of the above then press enter to reboot."
 sudo reboot
