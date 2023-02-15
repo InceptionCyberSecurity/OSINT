@@ -1,6 +1,6 @@
 # INTRO
 A set of OSINT commands all in one script. Saves results to files for further processing as necessary.
-Essential to run these through TL-OSINT, BlackArch or Kali Linux in VirtualBox. See https://www.tracelabs.org/initiatives/osint-vm and how to install TL-OSINT.
+Essential to run these through TL-OSINT in VirtualBox. See https://www.tracelabs.org/initiatives/osint-vm and how to install TL-OSINT.
 
 # INSTALLATION
 git clone https://github.com/ArcadeusOPS/OSINT.git
