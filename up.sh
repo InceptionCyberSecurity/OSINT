@@ -22,8 +22,4 @@ chkrootkit > rootkit.txt
 # sar -q > sarq.txt
 # sar -u > saru.txt
 # ausearch -f /etc/passwd > audit.txt
-echo " "
-echo " Running Tecmint's Server Info Script. "
-echo " "
-sleep 2
-monitor
+echo " Update successful. "
