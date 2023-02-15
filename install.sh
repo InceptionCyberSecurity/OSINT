@@ -68,6 +68,6 @@ sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
 sudo apt autoclean -y && sudo apt autoremove -y
 clear
-echo " Server is will now automatically reboot. "
+echo " Server will now automatically reboot. "
 sleep 3
 sudo reboot
