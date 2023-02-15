@@ -10,16 +10,14 @@ sleep 8
 # INSTALL BASE REQUITREMENTS
 sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
-sudo apt install dnsrecon chkrootkit tor ffuf -y
-sudo apt install net-tools dnsutils openssl python3 python2.7 xsltproc libxml2-utils python3-pip python2.7-dev python-docutils -y
+sudo apt install dnsrecon chkrootkit ffuf -y
+sudo apt install net-tools dnsutils openssl python3 python2.7 xsltproc libxml2-utils python3-pip python2.7-dev python3-docutils -y
 sudo apt install inetutils-traceroute geoip-bin geoip-database python3-dnspython python3-tld python3-geoip python3-whois python3-requests -y
-sudo apt install python3-ssdeep software-properties-common monit debsums apt-transport-https unattended-upgrades apt-show-versions traceroute setuptools -y
+sudo apt install python3-ssdeep software-properties-common monit debsums apt-transport-https unattended-upgrades apt-show-versions traceroute -y
 sudo add-apt-repository universe
-# seclists for password cracking
-git clone https://github.com/danielmiessler/SecLists.git
 # reconFTW https://github.com/six2dez/reconftw#a-in-your-pcvpsvm ./reconftw.sh -d target.com -a -o /root/RFTW
 git clone https://github.com/six2dez/reconftw
-cd reconftw/
+cd reconftw
 ./install.sh
 cd ..
 # sn1per https://github.com/1N3/Sn1per
