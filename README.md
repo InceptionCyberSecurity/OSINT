@@ -22,7 +22,7 @@ You can install UFW, apparmor, artillery, fail2ban - just uncomment the appropri
 Run Lynis and follow instructions.
 
 # USAGE
-./osint.sh 8.8.8.8 port mydir uname umail - as single command line argument but can use website instead of IP address e.g. google.com for 8.8.8.8.
+./osint.sh 8.8.8.8 uport udir uname umail wlan- as single command line argument but can use website instead of IP address e.g. google.com for 8.8.8.8.
 See install.sh for notes.
 
 # TO DO
