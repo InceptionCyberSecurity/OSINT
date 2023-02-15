@@ -59,6 +59,7 @@ python photon.py -u "$userIP" --clone
 cd /opt/discover/
 sudo ./discover.sh
 # torbot
+sudo service tor start # make sure that torrc is configured to SOCKS_PORT localhost:9050
 poetry run python run.py -u https://$userIP --depth 2 -v # example of running command with poetry
 # poetry run python run.py -h # for help
 # nmapAutomator

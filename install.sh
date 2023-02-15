@@ -35,20 +35,20 @@ cd ..
 git clone https://github.com/jofpin/trape.git
 cd trape
 pip3 install -r requirements.txt
-python3 trape.py -h
+# python3 trape.py -h
 cd ..
 # trackerjacker
 pip3 install trackerjacker
 # social-analyzer
-sudo apt-get install python3 python3-pip
 pip3 install social-analyzer
 # discover
 git clone https://github.com/leebaird/discover /opt/discover/
 # torbot
 sudo service tor start
+https://github.com/DedSecInside/gotor.git
 cd gotor && go run cmd/main/main.go -server
 poetry install # to install dependencies
-
+cd ..
 # nmapAutomator
 git clone https://github.com/21y4d/nmapAutomator.git
 sudo ln -s $(pwd)/nmapAutomator/nmapAutomator.sh /usr/local/bin/
