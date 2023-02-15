@@ -89,6 +89,6 @@ mv /root/nmA.txt /root/$udir/nmA.txt.txt
 mv /root/torbot.txt /root/$udir/torbot.txt
 echo " "
 echo " Your results are stored in directory $udir and /root/RFTW ."
-echo " Use Lee Baird's discover for further analysis. "
+echo " Use Lee Baird's discover for further analysis, cd /opt/discover the sudo ./discover.sh , EASY!"
 cd /
 cd root
