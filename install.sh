@@ -11,12 +11,11 @@ sleep 8
 # INSTALL BASE REQUITREMENTS
 sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
-sudo apt install git dnsrecon curl ruby perl php docker apparmor chkrootkit tor nmap
-sudo apt install ufw fail2ban net-tools dnsutils openssl python3 python2.7 xsltproc libxml2-utils python3-pip python2.7-dev python-docutils
-sudo apt install inetutils-traceroute geoip-bin geoip-database python3-dnspython python3-tld python3-geoip python3-whois python3-requests
-sudo apt install python3-ssdeep software-properties-common monit debsums auditd apt-transport-https sysstat unattended-upgrades apt-show-versions traceroute setuptools
+sudo apt install git dnsrecon curl ruby perl php docker apparmor chkrootkit tor nmap ffuf -y
+sudo apt install ufw fail2ban net-tools dnsutils openssl python3 python2.7 xsltproc libxml2-utils python3-pip python2.7-dev python-docutils -y
+sudo apt install inetutils-traceroute geoip-bin geoip-database python3-dnspython python3-tld python3-geoip python3-whois python3-requests -y
+sudo apt install python3-ssdeep software-properties-common monit debsums auditd apt-transport-https sysstat unattended-upgrades apt-show-versions traceroute setuptools -y
 sudo add-apt-repository universe
-sudo apt install ffuf -y
 # openvpn
 # wget https://git.io/vpn -O openvpn-install.sh
 # sudo chmod +x openvpn-install.sh
@@ -72,12 +71,11 @@ cd ..
 # trackerjacker
 pip3 install trackerjacker
 # social-analyzer
-sudo apt-get update
 sudo apt-get install python3 python3-pip
 pip3 install social-analyzer
 # photon
 git clone https://github.com/s0md3v/Photon.git
-cd photon
+cd Photon
 pip3 install -r requirements.txt
 cd ..
 # discover
