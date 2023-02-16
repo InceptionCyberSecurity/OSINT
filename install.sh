@@ -1,9 +1,9 @@
 #!/bin/bash
-# OSINT and Scanning Hyperion v3.1 2023 by ducatinat nathan.jones@arcadeusops.com; TL-OSINT
+# OSINT 2023 by ducatinat nathan.jones@arcadeusops.com; TL-OSINT
 # big.txt in /user/share/wordlists/dirb/ https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/big.txt
 cd /
 cd root
-echo " Welcome to the Hyperion v3.1 Installation Script for OSINT/general scanning. Base OS is TL-OSINT. "
+echo " Welcome to the OSINT Installation Script for public domain info harvesting. Base OS is TL-OSINT. "
 echo " This installation script will setup all requirements. Installation will automatically start ........ "
 echo " "
 sleep 8
@@ -59,7 +59,7 @@ chkrootkit > rootkit.txt
 #
 cd /
 cd root
-echo " Hyperion 3.1 system installation is complete. Updating all ... "
+echo " OSINT system installation is complete. Updating all ... "
 echo " See README and osint.sh for usage. "
 sleep 2
 # update

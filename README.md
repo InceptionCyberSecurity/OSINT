@@ -1,5 +1,6 @@
 # INTRO
 A set of OSINT commands all in one script. Saves results to files for further processing as necessary.
+Includes passive scanning using Nmap.
 Essential to run these through TL-OSINT in VirtualBox. See https://www.tracelabs.org/initiatives/osint-vm and how to install TL-OSINT.
 
 # INSTALLATION
@@ -29,3 +30,6 @@ See install.sh for notes.
 
 # TO DO
 Collate all output to a single XML or HTML file and email to designated user.
+
+# Bugs
+Send issues to info@arcadeusops.com stating nature of issue. A screenshot will help too. Thanks.
