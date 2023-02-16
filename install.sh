@@ -51,7 +51,9 @@ poetry install # to install dependencies
 cd ..
 # nmapAutomator
 git clone https://github.com/21y4d/nmapAutomator.git
+cd nmapAutomator
 sudo ln -s $(pwd)/nmapAutomator/nmapAutomator.sh /usr/local/bin/
+cd ..
 #
 clear
 echo " Checking for RAT Intrusions........ "
