@@ -3,6 +3,7 @@ A set of OSINT commands all in one script. Saves results to files for further pr
 Includes passive scanning using Nmap. Essential to run these through TL-OSINT in VirtualBox.
 See https://www.tracelabs.org/initiatives/osint-vm and how to install TL-OSINT.
 You can also use these scripts in Kali Linux. Any other Linux version will not have the necessary dependencies.
+Written by Nathan Jones nathan.jones@arcadeusops.com 
 
 # INSTALLATION
 git clone https://github.com/ArcadeusOPS/OSINT.git
