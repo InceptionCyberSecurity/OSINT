@@ -3,7 +3,7 @@ A set of OSINT commands all in one script. Saves results to files for further pr
 Includes passive scanning using Nmap. Essential to run these through TL-OSINT in VirtualBox.
 See https://www.tracelabs.org/initiatives/osint-vm and how to install TL-OSINT.
 You can also use these scripts in Kali Linux. Any other Linux version will not have the necessary dependencies.
-Written by Nathan Jones nathan.jones@arcadeusops.com 
+Written by Nathan Jones nathan.jones@arcadeusops.com
 
 # INSTALLATION
 git clone https://github.com/ArcadeusOPS/OSINT.git
@@ -29,6 +29,13 @@ Run Lynis and follow the recommendations.
 # USAGE
 ./osint.sh userIP uport udir uname umail wlan - as single command line argument but can use website instead of IP address e.g. google.com for 8.8.8.8.
 See install.sh for notes.
+
+## Ethical Notice
+The original code is written by ArcadeusOPS, who are not responsible for misuse of this data gathering tool. Do not use these scripts to navigate websites/devices that take part in any activity that is identified as illegal under the laws and regulations of your government. STAY LEGAL !!
+
+## License
+MIT License
+Copyright (c) ArcadeusOPS
 
 # TO DO
 Collate all output to a single XML or HTML file and email to designated user.
