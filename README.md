@@ -42,3 +42,6 @@ Collate all output to a single XML or HTML file and email to designated user.
 
 # Bugs
 Send issues to info@arcadeusops.com stating nature of issue. A screenshot will help too. Thanks.
+
+# CPD
+Part of EC-Council ECE/CPD Credits
