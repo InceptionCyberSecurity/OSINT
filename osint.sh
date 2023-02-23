@@ -10,7 +10,7 @@ umail="$5" # email to search for in social media
 wlan="$6" # wifi to scan; use dby trackerjacker
 #
 echo " These OSINT scripts may take along time to run. Grab a coffee! "
-echo " osint.sh will start automatically........ "
+echo " osint.sh will start automatically ........ "
 sleep 6
 # finalrecon
 python3 finalrecon.py --full $userIP -o finalrec.txt
