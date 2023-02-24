@@ -12,4 +12,4 @@ echo " "
 # rootkit check
 chkrootkit > rootkit.txt
 #
-echo " Update successful. "
+echo " Update successful. Look at rootkit.txt for dreade rookkits on this machine."
