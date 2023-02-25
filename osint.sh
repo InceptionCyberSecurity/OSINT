@@ -9,7 +9,8 @@ uname="$4" # username for social media searches
 umail="$5" # email to search for in social media
 wlan="$6" # wifi to scan; use dby trackerjacker
 #
-echo " These OSINT scripts may take along time to run. Grab a coffee! "
+echo " These OSINT scripts may take along time to run so grab a coffee! "
+echo " Don't forget to insert API Keys e.g. MOSINT and theHarvester. "
 echo " osint.sh will start automatically ........ "
 sleep 6
 # finalrecon
@@ -88,6 +89,6 @@ mv /root/nmA.txt /root/$udir/nmA.txt.txt
 mv /root/torbot.txt /root/$udir/torbot.txt
 echo " "
 echo " Your results are stored in directory $udir and /root/RFTW ."
-echo " Use Lee Baird's discover for further analysis, cd /opt/discover the sudo ./discover.sh , EASY!"
+echo " Use Lee Baird's discover for further analysis, cd /opt/discover; sudo ./discover.sh EASY!"
 cd /
 cd root
