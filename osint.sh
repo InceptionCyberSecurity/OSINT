@@ -71,6 +71,10 @@ cd /
 cd root
 mkdir $udir
 cd $udir
+cat *.txt > allrep.txt
+sed -i -e '1iAll OSINT .txt files\' allrep.txt
+sed -i -e '2i***************************\' allrep.txt
+#
 mv /root/dns.html /root/$udir/dns.html
 mv /root/disc.html /root/$udir/disc.html
 mv /root/finalrec.txt /root/$udir/finalrec.txt
