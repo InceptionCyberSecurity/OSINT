@@ -10,6 +10,7 @@ umail="$5" # email to search for in social media
 wlan="$6" # wifi to scan; use dby trackerjacker
 #
 echo " These OSINT scripts may take along time to run so grab a coffee! "
+echo " USAGE: ./osint.sh userIP uport udir uname umail wlan "
 echo " Don't forget to insert API Keys e.g. MOSINT and theHarvester. "
 echo " osint.sh will start automatically ........ "
 sleep 6
