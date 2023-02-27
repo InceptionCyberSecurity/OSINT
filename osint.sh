@@ -1,5 +1,6 @@
 #!/bin/bash
 # use only on TL-OSINT
+# Nathan Jones nathan.jones@arcadeusops.com
 # Usage ./osint.sh 8.8.8.8 port mydir uname umail wlan- as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
 # User Input from  command line arguments
 userIP="$1" # target URL eg. google.com or IP address. Preferable to use IP address and let the DNS sort out the primary IP ;-)
