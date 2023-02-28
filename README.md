@@ -11,7 +11,7 @@ cd OSINT <br/>
 sudo chmod 777 *.sh <br/>
 sudo ./install.sh <br/>
 rm install.sh <br/>
- <br/>
+<br/>
 NOTE: Make sure that torrc is configured to SOCKS_PORT localhost:9050 <br/>
 
 # Scripts
