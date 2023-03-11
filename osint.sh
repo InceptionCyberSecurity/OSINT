@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/#!/usr/bin/env bash
 # use only on TL-OSINT
 # Nathan Jones nathan.jones@arcadeusops.com
 # Usage ./osint.sh 8.8.8.8 port mydir uname umail wlan- as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
