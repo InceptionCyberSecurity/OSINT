@@ -8,7 +8,6 @@ uport="$2" # user port if nmap needs it. Try 80 or 443
 udir="$3" # directory for reports and scan data
 uname="$4" # username for social media searches
 umail="$5" # email to search for in social media
-wlan="$6" # wifi to scan; use dby trackerjacker
 #
 echo " These OSINT scripts may take along time to run so grab a coffee! "
 echo " USAGE: ./osint.sh userIP uport udir uname umail wlan "
@@ -53,9 +52,7 @@ sudo nmap -p - --script discovery $userIP -oX disc.xml
 xslproc disc.xml -o disc.html
 # trape
 python3 trape.py --url $IP --port $uport > trape.txt
-# trackerjacker
-trackerjacker -i $wlan --map > trackjack.txt
-# social-analyzer
+# socan
 python3 -m social-analyzer --username "$uname" > socan.txt
 # photon
 python photon.py -u "$userIP" --clone > photon.txt
@@ -88,7 +85,6 @@ mv /root/sherly.xlsx /root/$udir/sherly.xlsx
 mv /root/ashok.txt /root/$udir/ashok.txt
 mv /root/mosint.txt /root/$udir/mosint.txt
 mv /root/trape.txt /root/$udir/trape.txt
-mv /root/trackjack.txt /root/$udir/trackjack.txt
 mv /root/socan.txt /root/$udir/socan.txt
 mv /root/photon.txt /root/$udir/photon.txt
 mv /root/nmA.txt /root/$udir/nmA.txt.txt
