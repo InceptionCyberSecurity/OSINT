@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # use only on TL-OSINT. Nathan Jones nathan.jones@arcadeusops.com
-# User Input 
 # userIP= target URL eg. google.com or IP address. Preferable to use IP address and let the DNS sort out the primary IP
 # udir= directory for reports and scan data
 # uname= username for social media searches eg "Knobby Knobs"
@@ -8,7 +7,7 @@
 read -p "Enter target domain name or IP address : " userIP
 echo "Your target is : $userIP"
 echo " "
-read -p "Enter username in this format Bobby Bobson : " uname1
+read -p "Enter username e.g. Bobby Bobson : " uname1
 echo "Your target username is : $uname"
 echo " "
 read -p "Enter the email to search for : " umail
