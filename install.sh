@@ -37,8 +37,6 @@ cd trape
 pip3 install -r requirements.txt
 # python3 trape.py -h
 cd ..
-# trackerjacker
-pip3 install trackerjacker
 # social-analyzer
 pip3 install social-analyzer
 # discover

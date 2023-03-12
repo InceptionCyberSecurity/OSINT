@@ -8,15 +8,14 @@ Written by Nathan Jones nathan.jones@arcadeusops.com. <br/>
 # INSTALLATION
 git clone https://github.com/ArcadeusOPS/OSINT.git <br/>
 cd OSINT <br/>
-sudo chmod 777 *.sh <br/>
+sudo chmod 755 *.sh <br/>
 sudo ./install.sh <br/>
 rm install.sh <br/>
 <br/>
 NOTE: Make sure that torrc is configured to SOCKS_PORT localhost:9050 <br/>
 
 # Scripts
-install.sh installs a few extras. <br/>
-up.sh updates the base, installed TL-OSINT OS. <br/>
+install.sh installs a few extras. up.sh updates the base, installed TL-OSINT OS. <br/>
 osint.sh runs the scripts and saves output to local storage. Follow the instruction in the osint.sh file comments. <br/>
 
 # SSH
@@ -27,7 +26,7 @@ You can install Lynis, ufw, apparmor, artillery, fail2ban - for added security. 
 Run Lynis and follow the recommendations. <br/>
 
 # USAGE
-./osint.sh userIP uport udir uname umail wlan - as single command line argument but can use website instead of IP address e.g. google.com for 8.8.8.8. <br/>
+./osint.sh and follow the prompts. Target address e.g. google.com for 8.8.8.8. <br/>
 See install.sh for notes. <br/>
 
 ## Ethical Notice

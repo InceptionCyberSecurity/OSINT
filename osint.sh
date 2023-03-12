@@ -1,15 +1,23 @@
 #!/usr/bin/env bash
-# use only on TL-OSINT
-# Nathan Jones nathan.jones@arcadeusops.com
-# Usage ./osint.sh 8.8.8.8  mydir uname umail - as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
-# User Input from  command line arguments
-userIP="$1" # target URL eg. google.com or IP address. Preferable to use IP address and let the DNS sort out the primary IP
-udir="$2" # directory for reports and scan data
-uname="$3" # username for social media searches
-umail="$4" # email to search for in social media
-#
+# use only on TL-OSINT. Nathan Jones nathan.jones@arcadeusops.com
+# User Input 
+# userIP= target URL eg. google.com or IP address. Preferable to use IP address and let the DNS sort out the primary IP
+# udir= directory for reports and scan data
+# uname= username for social media searches eg "Knobby Knobs"
+# umail= email to search for in social media
+read -p "Enter target domain name or IP address : " userIP
+echo "Your target is : $userIP"
+echo " "
+read -p "Enter username in this format Bobby Bobson : " uname1
+echo "Your target username is : $uname"
+echo " "
+read -p "Enter the email to search for : " umail
+echo "Your target email is : $umail"
+echo " "
+read -p "Enter the local directory for reports to be saved to : " udir
+echo "Your local directory is : $udir"
+echo " "
 echo " These OSINT scripts may take along time to run so grab a coffee! "
-echo " USAGE: ./osint.sh userIP udir uname umail "
 echo " Don't forget to insert API Keys e.g. MOSINT and theHarvester. "
 echo " osint.sh will start automatically ........ "
 sleep 6
@@ -19,7 +27,7 @@ python3 finalrecon.py --full $userIP -o finalrec.txt
 dnsenum $userIP -o dnsrec.xml
 xsltproc dnsrec.xml -o dnsrec.html
 # theHarvester
-theHarvester -d $userIP -l 200 -b bing -f harvest.xml
+theHarvester -d $userIP -l 200 -b All -f harvest.xml
 xsltproc harvest.xml -o harvest.html
 # twint
 twint -u $uname --followers --user-full --email --phone -o twint.txt
@@ -50,7 +58,7 @@ xslproc dns.xml -o dns.html
 sudo nmap -p - --script discovery $userIP -oX disc.xml
 xslproc disc.xml -o disc.html
 # trape chnage port 80 eg 443
-python3 trape.py --url $IP --port 80 > trape.txt
+python3 trape.py --url $userIP --port 80 > trape.txt
 # socan
 python3 -m social-analyzer --username "$uname" > socan.txt
 # photon
