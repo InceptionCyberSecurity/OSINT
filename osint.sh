@@ -44,7 +44,7 @@ python3 Ashok.py --headers --subdomain --dorknumber 10 --cms https://$userIP > a
 # mosint set psbdmp <06854e5ed04880d9739c87beee73bbd2>
 # mosint set breachdirectory <58fff0d5d5msh8b2308b757609ebp1dd419jsn2dbc042b4e27>
 #
-python3 mosint.py -e $umail > mosint.txt
+mosint $umail > mosint.txt
 # sn1per https://github.com/1N3/Sn1per
 sniper -t $userIP # normal mode
 sniper -t $userIP -o -re # OSINT and RECON
