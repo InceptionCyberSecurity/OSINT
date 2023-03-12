@@ -4,16 +4,16 @@
 # udir= directory for reports and scan data
 # uname= username for social media searches eg "Knobby Knobs"
 # umail= email to search for in social media
-read -p "Enter target domain name or IP address : " userIP
+read -p "Enter target domain name or IP addresse.g. mysite.com or xxx.xxx.xxx.xxx : " userIP
 echo "Your target is : $userIP"
 echo " "
-read -p "Enter username e.g. Bobby Bobson : " uname1
+read -p "Enter username e.g. Bobby Bobson or bobbybobson: " uname1
 echo "Your target username is : $uname"
 echo " "
-read -p "Enter the email to search for : " umail
+read -p "Enter the email to search for e.g someone@someserver.com: " umail
 echo "Your target email is : $umail"
 echo " "
-read -p "Enter the local directory for reports to be saved to : " udir
+read -p "Enter the local directory for reports to be saved to e.g MyStuff : " udir
 echo "Your local directory is : $udir"
 echo " "
 echo " These OSINT scripts may take along time to run so grab a coffee! "
@@ -21,7 +21,7 @@ echo " Don't forget to insert API Keys e.g. MOSINT and theHarvester. "
 echo " osint.sh will start automatically ........ "
 sleep 6
 # finalrecon
-python3 finalrecon.py --full $userIP -o finalrec.txt
+finalrecon --full https://$userIP -o finalrec.txt
 # dnsenum
 dnsenum $userIP -o dnsrec.xml
 xsltproc dnsrec.xml -o dnsrec.html
@@ -31,7 +31,7 @@ xsltproc harvest.xml -o harvest.html
 # twint
 twint -u $uname --followers --user-full --email --phone -o twint.txt
 # Sherlock see https://github.com/sherlock-project/sherlock#installation
-python3 sherlock --verbose $uname $umail --output sherly.txt --xlsx sherly.xlsx
+sherlock --verbose $uname $umail --output sherly.txt --xlsx sherly.xlsx
 # python3 sherlock user1 user2 user3
 # Accounts found will be stored in an individual text file with the corresponding username (e.g user123.txt).
 # Ashok see https://www.geeksforgeeks.org/ashok-osint-recon-tool-in-kali-linux/
