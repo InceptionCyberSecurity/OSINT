@@ -10,7 +10,8 @@ sleep 2
 # INSTALL BASE REQUITREMENTS
 sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
-sudo apt install net-tools dnsutils python2.7 libxml2-utils python3-pip python2.7-dev python3-docutils -y
+sudo apt install gccgo-go golang-go -y
+sudo apt install golang finalrecon net-tools dnsutils python2.7 libxml2-utils python3-pip python2.7-dev python3-docutils -y
 sudo apt install inetutils-traceroute geoip-bin geoip-database python3-dnspython python3-tld python3-geoip python3-whois python3-requests -y
 sudo apt install git-all python3-ssdeep software-properties-common monit debsums apt-transport-https apt-show-versions -y
 # reconFTW https://github.com/six2dez/reconftw#a-in-your-pcvpsvm ./reconftw.sh -d target.com -a -o /root/RFTW
@@ -50,6 +51,18 @@ git clone https://github.com/21y4d/nmapAutomator.git
 cd nmapAutomator
 sudo ln -s $(pwd)/nmapAutomator/nmapAutomator.sh /usr/local/bin/
 cd ..
+# MOSINT
+pip3 install tabula
+go install -v github.com/alpkeskin/mosint@latest
+cd mosint/
+pip3 install -r requirements.txt
+# MOSINT see https://www.geeksforgeeks.org/mosint-osint-tool-for-emails-in-kali-linux/
+# MOSINT API keys
+mosint set hunter <18a27fba1f51ed59e52d49fd483c6dbcad020bda>
+# mosint set emailrep <emailrep.io API key>
+mosint set intelx <af057190-f051-4041-a619-52cebcd55f43>
+mosint set psbdmp <06854e5ed04880d9739c87beee73bbd2>
+mosint set breachdirectory <58fff0d5d5msh8b2308b757609ebp1dd419jsn2dbc042b4e27>
 #
 cd /
 cd root
