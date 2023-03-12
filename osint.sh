@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
 # use only on TL-OSINT
 # Nathan Jones nathan.jones@arcadeusops.com
-# Usage ./osint.sh 8.8.8.8 port mydir uname umail wlan- as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
+# Usage ./osint.sh 8.8.8.8  mydir uname umail - as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
 # User Input from  command line arguments
-userIP="$1" # target URL eg. google.com or IP address. Preferable to use IP address and let the DNS sort out the primary IP ;-)
-uport="$2" # user port if nmap needs it. Try 80 or 443
-udir="$3" # directory for reports and scan data
-uname="$4" # username for social media searches
-umail="$5" # email to search for in social media
+userIP="$1" # target URL eg. google.com or IP address. Preferable to use IP address and let the DNS sort out the primary IP
+udir="$2" # directory for reports and scan data
+uname="$3" # username for social media searches
+umail="$4" # email to search for in social media
 #
 echo " These OSINT scripts may take along time to run so grab a coffee! "
-echo " USAGE: ./osint.sh userIP uport udir uname umail wlan "
+echo " USAGE: ./osint.sh userIP udir uname umail "
 echo " Don't forget to insert API Keys e.g. MOSINT and theHarvester. "
 echo " osint.sh will start automatically ........ "
 sleep 6
@@ -51,7 +50,7 @@ xslproc dns.xml -o dns.html
 sudo nmap -p - --script discovery $userIP -oX disc.xml
 xslproc disc.xml -o disc.html
 # trape
-python3 trape.py --url $IP --port $uport > trape.txt
+python3 trape.py --url $IP --port 80 > trape.txt
 # socan
 python3 -m social-analyzer --username "$uname" > socan.txt
 # photon
