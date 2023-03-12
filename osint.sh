@@ -38,11 +38,11 @@ sherlock --verbose $uname $umail --output sherly.txt --xlsx sherly.xlsx
 python3 Ashok.py --headers --subdomain --dorknumber 10 --cms https://$userIP > ashok.txt
 # MOSINT see https://www.geeksforgeeks.org/mosint-osint-tool-for-emails-in-kali-linux/
 # MOSINT API keys
-mosint set hunter <18a27fba1f51ed59e52d49fd483c6dbcad020bda>
-mosint set emailrep <emailrep.io API key>
-mosint set intelx <af057190-f051-4041-a619-52cebcd55f43>
-mosint set psbdmp <06854e5ed04880d9739c87beee73bbd2>
-mosint set breachdirectory <58fff0d5d5msh8b2308b757609ebp1dd419jsn2dbc042b4e27>
+# mosint set hunter <18a27fba1f51ed59e52d49fd483c6dbcad020bda>
+# mosint set emailrep <emailrep.io API key>
+# mosint set intelx <af057190-f051-4041-a619-52cebcd55f43>
+# mosint set psbdmp <06854e5ed04880d9739c87beee73bbd2>
+# mosint set breachdirectory <58fff0d5d5msh8b2308b757609ebp1dd419jsn2dbc042b4e27>
 #
 python3 mosint.py -e $umail > mosint.txt
 # sn1per https://github.com/1N3/Sn1per
