@@ -6,7 +6,7 @@ cd root
 echo " Welcome to the OSINT Installation Script for public domain info harvesting. Base OS is TL-OSINT. "
 echo " This installation script will setup all requirements. Installation will automatically start ........ "
 echo " "
-sleep 8
+sleep 3
 # INSTALL BASE REQUITREMENTS
 sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
@@ -54,7 +54,7 @@ sudo ln -s $(pwd)/nmapAutomator/nmapAutomator.sh /usr/local/bin/
 cd ..
 #
 clear
-echo " Checking for RAT Intrusions........ "
+echo " Checking for RAT Intrusions. Look at rootkit.txt. "
 chkrootkit > rootkit.txt
 cd /
 cd root
@@ -66,8 +66,9 @@ sudo nmap --script-update
 sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
 sudo apt autoclean -y && sudo apt autoremove -y
+chmod 755 *.sh
 clear
 echo " Server will now automatically reboot. "
-echo " Usage is .........  ./osint.sh userIP udir uname umail "
-sleep 6
+echo " Usage is ./osint.sh then follow onscreen prompts. "
+sleep 4
 sudo reboot
