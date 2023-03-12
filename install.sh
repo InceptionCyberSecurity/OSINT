@@ -54,7 +54,7 @@ git clone https://github.com/21y4d/nmapAutomator.git
 cd nmapAutomator
 sudo ln -s $(pwd)/nmapAutomator/nmapAutomator.sh /usr/local/bin/
 cd ..
-3
+#
 clear
 echo " Checking for RAT Intrusions........ "
 chkrootkit > rootkit.txt
@@ -70,7 +70,6 @@ sudo apt upgrade -y && sudo apt dist-upgrade -y
 sudo apt autoclean -y && sudo apt autoremove -y
 clear
 echo " Server will now automatically reboot. "
-echo " "
-echo " Usage is .........  ./osint.sh userIP uport udir uname umail wlan "
-sleep 3
+echo " Usage is .........  ./osint.sh userIP udir uname umail "
+sleep 6
 sudo reboot
