@@ -6,10 +6,5 @@ sudo apt autoclean -y && sudo apt autoremove -y
 sudo apt clean
 # clean up diskspace
 sudo find /tmp -type f -atime +10 -delete
-echo " "
-echo " Checking for rootkits and intrusions. Read /var/log/syslog and rootkit.txt and investigate any unusual files/activity. "
-echo " "
-# rootkit check
-chkrootkit > rootkit.txt
 #
-echo " Update successful. Look at rootkit.txt for dreade rookkits on this machine."
+echo " Update successful."
