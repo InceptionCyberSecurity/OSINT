@@ -43,6 +43,7 @@ mosint set emailrep <emailrep.io API key>
 mosint set intelx <af057190-f051-4041-a619-52cebcd55f43>
 mosint set psbdmp <06854e5ed04880d9739c87beee73bbd2>
 mosint set breachdirectory <58fff0d5d5msh8b2308b757609ebp1dd419jsn2dbc042b4e27>
+#
 python3 mosint.py -e $umail > mosint.txt
 # sn1per https://github.com/1N3/Sn1per
 sniper -t $userIP # normal mode
@@ -52,10 +53,10 @@ sniper -t $userIP -m stealth -o -re # Stealth OSINT and RECON
 ./reconftw.sh -d $userIP -a -o /root/RFTW
 # all dns
 sudo nmap -p - --script dns* $userIP -oX dns.xml
-xslproc dns.xml -o dns.html
+xsltproc dns.xml -o dns.html
 # all Discovery
 sudo nmap -p - --script discovery $userIP -oX disc.xml
-xslproc disc.xml -o disc.html
+xsltproc disc.xml -o disc.html
 # trape chnage port 80 eg 443
 python3 trape.py --url $userIP --port 80 > trape.txt
 # socan
