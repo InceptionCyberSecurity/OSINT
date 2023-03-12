@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# use only on TL-OSINT. Nathan Jones nathan.jones@arcadeusops.com
+# Nathan Jones nathan.jones@arcadeusops.com
 # userIP= target URL eg. google.com or IP address. Preferable to use domain name
 # udir= directory for reports and scan data
 # uname= username for social media searches eg "Knobby Knobs"
