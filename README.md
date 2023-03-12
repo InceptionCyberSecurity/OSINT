@@ -24,8 +24,7 @@ You can install Lynis, ufw, apparmor, artillery, fail2ban - for added security. 
 Run Lynis and follow the recommendations. <br/>
 
 # USAGE
-./osint.sh and follow the prompts. Target address e.g. google.com for 8.8.8.8. <br/>
-See install.sh for notes. <br/>
+./osint.sh and follow the prompts. See install.sh for notes. <br/>
 
 ## Ethical Notice
 The original code is written by ArcadeusOPS, who are not responsible for misuse of this data gathering tool.  <br/>
