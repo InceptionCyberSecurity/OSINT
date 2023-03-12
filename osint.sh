@@ -49,7 +49,7 @@ xslproc dns.xml -o dns.html
 # all Discovery
 sudo nmap -p - --script discovery $userIP -oX disc.xml
 xslproc disc.xml -o disc.html
-# trape
+# trape chnage port 80 eg 443
 python3 trape.py --url $IP --port 80 > trape.txt
 # socan
 python3 -m social-analyzer --username "$uname" > socan.txt
