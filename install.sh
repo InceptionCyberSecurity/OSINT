@@ -4,9 +4,12 @@
 cd /
 cd root
 echo " Welcome to the OSINT Installation Script for public domain info harvesting. Base OS is Kali. "
+echo " "
+echo " Make sure that torrc is configured to SOCKS_PORT localhost:9050 "
+echo " "
 echo " This installation script will setup all requirements. Installation will automatically start ........ "
 echo " "
-sleep 2
+sleep 10
 # INSTALL BASE REQUITREMENTS
 sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
