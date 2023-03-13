@@ -24,8 +24,9 @@ You can install Lynis, ufw, apparmor, artillery, fail2ban - for added security. 
 Run Lynis and follow the recommendations. <br/>
 
 # USAGE
-./osint.sh is to search a given Domain, and follow the prompts. See install.sh for notes. <br/>
-./osint1.sh is to search a given Username/Email, and follow the prompts. See install.sh for notes. <br/>
+./osint.sh is to search a given Domain, follow the prompts. <br/>
+./osint1.sh is to search a given Username/Email, follow the prompts. <br/>
+See install.sh for notes. <br/>
 
 ## Ethical Notice
 The original code is written by ArcadeusOPS, who are not responsible for misuse of this data gathering tool.  <br/>

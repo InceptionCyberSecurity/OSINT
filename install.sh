@@ -74,6 +74,6 @@ sudo apt autoclean -y && sudo apt autoremove -y
 chmod 755 *.sh
 clear
 echo " Server will now automatically reboot. "
-echo " Usage is ./osint.sh then follow onscreen prompts. "
+echo " Usage is ./osint.sh OR osint1.sh then follow onscreen prompts. "
 sleep 4
 sudo reboot
