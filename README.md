@@ -13,7 +13,7 @@ rm install.sh <br/>
 NOTE: Make sure that torrc is configured to SOCKS_PORT localhost:9050 <br/>
 
 # Scripts
-install.sh installs a few extras. up.sh updates the base, installed TL-OSINT OS. <br/>
+install.sh installs a few extras. up.sh updates the base, installed Kali OS. <br/>
 osint.sh runs the scripts and saves output to local storage. Follow the instruction in the osint.sh file comments. <br/>
 
 # SSH
