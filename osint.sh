@@ -2,8 +2,6 @@
 # Nathan Jones nathan.jones@arcadeusops.com
 # userIP= target URL eg. google.com or IP address. Preferable to use domain name
 # udir= directory for reports and scan data
-# uname= username for social media searches eg "Knobby Knobs"
-# umail= email to search for in social media
 ech " "
 echo " You will need a Target Domain. You'll be asked where you want to store the Reports. "
 ech " "
