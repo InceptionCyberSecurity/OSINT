@@ -13,7 +13,6 @@ echo " "
 sleep 10
 # INSTALL BASE REQUITREMENTS
 sudo apt update
-sudo apt upgrade -y && sudo apt dist-upgrade -y
 sudo apt install gccgo-go golang-go tor -y
 sudo apt install golang finalrecon net-tools dnsutils python2.7 libxml2-utils python3-pip python2.7-dev python3-docutils -y
 sudo apt install inetutils-traceroute geoip-bin geoip-database python3-dnspython python3-tld python3-geoip python3-whois python3-requests -y
@@ -73,7 +72,6 @@ sleep 2
 # update and reboot
 sudo nmap --script-update
 sudo apt update
-sudo apt upgrade -y && sudo apt dist-upgrade -y
 sudo apt autoclean -y && sudo apt autoremove -y
 chmod 755 *.sh
 clear
