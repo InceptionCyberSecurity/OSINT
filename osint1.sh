@@ -3,9 +3,10 @@
 # udir= directory for reports and scan data
 # uname= username for social media searches eg "Knobby Knobs"
 # umail= email to search for in social media
-ech " "
+echo " "
+echo " This is osint1.sh and is an OSINT Scan and Passive Recon on a Username and Email address."
 echo " You will need a Username and Email to search for. You'll be asked where you want to store the Reports. "
-ech " NOTE:  osint.sh uses a specified Domain Name; osint1.sh uses a specified Username/Email. "
+echo " NOTE:  osint.sh uses a specified Domain Name; osint1.sh uses a specified Username/Email. "
 echo " "
 read -p "Enter username e.g. Bobby Bobson or bobbybobson: " uname
 echo "Your target username is : $uname"

@@ -2,9 +2,9 @@
 # Nathan Jones nathan.jones@arcadeusops.com
 # userIP= target URL eg. google.com or IP address. Preferable to use domain name
 # udir= directory for reports and scan data
-ech " "
+echo " This is osint.sh and is an OSINT Scan and Passive Recon on a Target Domain. "
 echo " You will need a Target Domain. You'll be asked where you want to store the Reports. "
-ech " "
+echo " "
 read -p "Enter target domain name or IP address e.g. mysite.com or xxx.xxx.xxx.xxx. Preferably, use domain name : " userIP
 echo "Your target is : $userIP"
 echo " "
