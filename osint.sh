@@ -15,7 +15,7 @@ echo " These OSINT scripts may take along time to run so grab a coffee! "
 echo " osint.sh will start automatically ........ "
 sleep 6
 # finalrecon
-finalrecon --full https://$userIP -o finalrec.txt
+finalrecon --full https://$userIP > finalrec.txt
 # dnsenum
 dnsenum $userIP -o dnsrec.xml
 xsltproc dnsrec.xml -o dnsrec.html
@@ -23,7 +23,9 @@ xsltproc dnsrec.xml -o dnsrec.html
 theHarvester -d $userIP -l 200 -b All -f harvest.xml
 xsltproc harvest.xml -o harvest.html
 # Ashok see https://www.geeksforgeeks.org/ashok-osint-recon-tool-in-kali-linux/
+cd Ashok
 python3 Ashok.py --headers --subdomain --dorknumber 10 --cms https://$userIP > ashok.txt
+cd ..
 # sn1per https://github.com/1N3/Sn1per
 sniper -t $userIP # normal mode
 sniper -t $userIP -o -re # OSINT and RECON
