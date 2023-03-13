@@ -3,11 +3,12 @@
 # big.txt in /user/share/wordlists/dirb/ https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/big.txt
 cd /
 cd root
+clear
 echo " Welcome to the OSINT Installation Script for public domain info harvesting. Base OS is Kali. "
 echo " "
-echo " Make sure that torrc is configured to SOCKS_PORT localhost:9050 "
+echo " IMPORTTANT !!!!  Make sure that torrc is configured to SOCKS_PORT localhost:9050 "
 echo " "
-echo " This installation script will setup all requirements. Installation will automatically start ........ "
+echo " This script will setup all requirements. Installation will automatically start ........ "
 echo " "
 sleep 10
 # INSTALL BASE REQUITREMENTS

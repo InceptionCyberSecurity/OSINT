@@ -1,5 +1,5 @@
 #!/bin/bash
-# use only for Hyperion v3.1 on TL-OSINT
+# use only for Hyperion v3.1 on Kali
 sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
 sudo apt autoclean -y && sudo apt autoremove -y
