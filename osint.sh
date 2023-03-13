@@ -12,7 +12,6 @@ read -p "Enter the local directory for reports to be saved to e.g MyStuff : " ud
 echo "Your local directory is : $udir"
 echo " "
 echo " These OSINT scripts may take along time to run so grab a coffee! "
-echo " Don't forget to insert API Keys e.g. MOSINT and theHarvester. "
 echo " osint.sh will start automatically ........ "
 sleep 6
 # finalrecon
