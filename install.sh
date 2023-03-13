@@ -67,7 +67,7 @@ cd ..
 cd /
 cd root
 echo " OSINT system installation is complete. Updating all ... "
-echo " See README and osint.sh for usage. "
+echo " See README, osint.sh and osint1.sh for usage. "
 sleep 2
 # update and reboot
 sudo nmap --script-update
