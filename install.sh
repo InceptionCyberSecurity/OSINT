@@ -64,7 +64,6 @@ go install -v github.com/alpkeskin/mosint@latest
 # mosint set intelx <af057190-f051-4041-a619-52cebcd55f43>
 # mosint set psbdmp <06854e5ed04880d9739c87beee73bbd2>
 # mosint set breachdirectory <58fff0d5d5msh8b2308b757609ebp1dd419jsn2dbc042b4e27>
-cd ..
 #
 cd /
 cd root
