@@ -4,6 +4,9 @@
 # udir= directory for reports and scan data
 # uname= username for social media searches eg "Knobby Knobs"
 # umail= email to search for in social media
+ech " "
+echo " You will need a Target Domain, Username, Email to search for. You'll be asked where you want to store the Reports. "
+ech " "
 read -p "Enter target domain name or IP address e.g. mysite.com or xxx.xxx.xxx.xxx. Preferably, use domain name : " userIP
 echo "Your target is : $userIP"
 echo " "
@@ -98,6 +101,5 @@ mv /root/nmA.txt /root/$udir/nmA.txt.txt
 mv /root/torbot.txt /root/$udir/torbot.txt
 echo " "
 echo " Your results are stored in directory $udir and /root/RFTW ."
-echo " Use Lee Baird's discover for further analysis, cd /opt/discover; sudo ./discover.sh EASY!"
 cd /
 cd root

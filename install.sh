@@ -10,7 +10,7 @@ sleep 2
 # INSTALL BASE REQUITREMENTS
 sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
-sudo apt install gccgo-go golang-go -y
+sudo apt install gccgo-go golang-go poetry -y
 sudo apt install golang finalrecon net-tools dnsutils python2.7 libxml2-utils python3-pip python2.7-dev python3-docutils -y
 sudo apt install inetutils-traceroute geoip-bin geoip-database python3-dnspython python3-tld python3-geoip python3-whois python3-requests -y
 sudo apt install git-all python3-ssdeep software-properties-common monit debsums apt-transport-https apt-show-versions -y
@@ -38,8 +38,6 @@ pip3 install -r requirements.txt
 cd ..
 # social-analyzer
 pip3 install social-analyzer
-# discover
-git clone https://github.com/leebaird/discover /opt/discover/
 # torbot
 sudo service tor start
 https://github.com/DedSecInside/gotor.git
