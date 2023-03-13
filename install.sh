@@ -2,8 +2,6 @@
 # OSINT 2023 by ducatinat nathan.jones@arcadeusops.com; Kali linux
 # RUN THIS FILE AS SUDO
 # big.txt in /user/share/wordlists/dirb/ https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/big.txt
-cd /
-cd root
 clear
 echo " "
 echo " Welcome to the OSINT Installation Script for public domain info harvesting. Base OS is Kali. "
