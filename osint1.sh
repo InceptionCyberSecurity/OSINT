@@ -20,6 +20,7 @@ echo " "
 echo " These OSINT scripts may take a long time to run so grab a coffee! "
 echo " NOTE!!!!! Don't forget to insert API Keys e.g. MOSINT and theHarvester. "
 echo " osint.sh will start automatically ........ "
+mkdir $udir
 sleep 6
 # twint
 twint -u $uname --followers --user-full --email --phone -o twint.txt
@@ -39,16 +40,13 @@ mosint $umail > mosint.txt
 # socan
 python3 -m social-analyzer --username "$uname" > socan.txt
 # local storage ready for upload to client's container
-mkdir $udir
 cd $udir
 cat *.txt > allrep.txt
 sed -i -e '1iAll OSINT .txt files\' allrep.txt
 sed -i -e '2i***************************\' allrep.txt
+mv *.txt /$udir
+mv *.xlsx /$udir
 #
-mv /root/twint.txt /root$udir/twint.txt
-mv /root/sherly.txt /root/$udir/sherly.txt
-mv /root/sherly.xlsx /root/$udir/sherly.xlsx
-mv /root/socan.txt /root/$udir/socan.txt
 echo " "
 echo " Your results are stored in directory $udir ."
 cd /

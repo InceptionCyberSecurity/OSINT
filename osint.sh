@@ -13,6 +13,7 @@ echo "Your local directory is : $udir"
 echo " "
 echo " These OSINT scripts may take along time to run so grab a coffee! "
 echo " osint.sh will start automatically ........ "
+mkdir $udir
 sleep 6
 # finalrecon
 finalrecon --full https://$userIP > finalrec.txt
@@ -49,22 +50,14 @@ poetry run python run.py -u https://$userIP --depth 2 -v > torbot.txt # example 
 # nmapAutomator
 ./nmapAutomator.sh --host $userIP --type All > nmA.txt
 # local storage ready for upload to client's container
-mkdir $udir
 cd $udir
 cat *.txt > allrep.txt
 sed -i -e '1iAll OSINT .txt files\' allrep.txt
 sed -i -e '2i***************************\' allrep.txt
+mv *.txt /$udir
+mv *.html /$udir
+mv *.xml /$udir
 #
-mv /root/dns.html /root/$udir/dns.html
-mv /root/disc.html /root/$udir/disc.html
-mv /root/finalrec.txt /root/$udir/finalrec.txt
-mv /root/dnsrec.html /root/$udir/dnsrec.html
-mv /root/harvest.html /root/$udir/harvest.html
-mv /root/ashok.txt /root/$udir/ashok.txt
-mv /root/trape.txt /root/$udir/trape.txt
-mv /root/photon.txt /root/$udir/photon.txt
-mv /root/nmA.txt /root/$udir/nmA.txt.txt
-mv /root/torbot.txt /root/$udir/torbot.txt
 echo " "
 echo " Your results are stored in directory $udir and /root/RFTW ."
 cd /
