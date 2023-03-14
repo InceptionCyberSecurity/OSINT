@@ -39,8 +39,6 @@ mosint $umail > mosint.txt
 # socan
 python3 -m social-analyzer --username "$uname" > socan.txt
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
 cd $udir
 cat *.txt > allrep.txt

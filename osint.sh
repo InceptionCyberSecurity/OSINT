@@ -49,8 +49,6 @@ poetry run python run.py -u https://$userIP --depth 2 -v > torbot.txt # example 
 # nmapAutomator
 ./nmapAutomator.sh --host $userIP --type All > nmA.txt
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
 cd $udir
 cat *.txt > allrep.txt
