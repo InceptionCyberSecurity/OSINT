@@ -50,6 +50,6 @@ mv /root/sherly.txt /root/$udir/sherly.txt
 mv /root/sherly.xlsx /root/$udir/sherly.xlsx
 mv /root/socan.txt /root/$udir/socan.txt
 echo " "
-echo " Your results are stored in directory $udir and /root/RFTW ."
+echo " Your results are stored in directory $udir ."
 cd /
 cd root

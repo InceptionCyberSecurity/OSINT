@@ -5,24 +5,17 @@
 clear
 echo " "
 echo " Welcome to the OSINT Installation Script for public domain info harvesting. Base OS is Kali. "
-echo " "
 echo " IMPORTTANT !!!!  Make sure that torrc is configured to SOCKS_PORT localhost:9050 "
-echo " "
 echo " This script will setup all requirements. Installation will automatically start ........ "
 echo " "
 sleep 10
 # INSTALL BASE REQUITREMENTS
 sudo apt update
-sudo apt install gccgo-go golang-go tor -y
-sudo apt install golang finalrecon net-tools dnsutils python2.7 libxml2-utils python3-pip python2.7-dev python3-docutils -y
+sudo apt install golang gccgo-go golang-go tor -y
+sudo apt install finalrecon net-tools dnsutils python2.7 libxml2-utils python3-pip python2.7-dev python3-docutils -y
 sudo apt install inetutils-traceroute geoip-bin geoip-database python3-dnspython python3-tld python3-geoip python3-whois python3-requests -y
 sudo apt install git-all python3-ssdeep software-properties-common monit debsums apt-transport-https apt-show-versions -y
 pip install poetry
-# reconFTW https://github.com/six2dez/reconftw#a-in-your-pcvpsvm ./reconftw.sh -d target.com -a -o /root/RFTW
-git clone https://github.com/six2dez/reconftw
-cd reconftw
-./install.sh
-cd ..
 # sn1per https://github.com/1N3/Sn1per
 git clone https://github.com/1N3/Sn1per
 cd Sn1per
@@ -63,8 +56,12 @@ go install -v github.com/alpkeskin/mosint@latest
 # mosint set psbdmp <06854e5ed04880d9739c87beee73bbd2>
 # mosint set breachdirectory <58fff0d5d5msh8b2308b757609ebp1dd419jsn2dbc042b4e27>
 #
-echo " OSINT system installation is complete. Updating all ... "
-echo " See README, osint.sh and osint1.sh for usage. "
+# reconFTW https://github.com/six2dez/reconftw#a-in-your-pcvpsvm ./reconftw.sh -d target.com -a -o /root/RFTW
+git clone https://github.com/six2dez/reconftw
+cd reconftw
+./install.sh
+cd ..
+echo " OSINT system installation is complete. Updating all ... See README, osint.sh and osint1.sh for usage. "
 sleep 2
 # update and reboot
 sudo nmap --script-update
@@ -72,7 +69,6 @@ sudo apt update
 sudo apt autoclean -y && sudo apt autoremove -y
 chmod 755 *.sh
 clear
-echo " Server will now automatically reboot. "
-echo " Usage is ./osint.sh OR osint1.sh then follow onscreen prompts. "
+echo " Server will now automatically reboot. Usage is ./osint.sh OR osint1.sh then follow onscreen prompts. "
 sleep 4
 sudo reboot
