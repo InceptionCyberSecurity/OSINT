@@ -11,8 +11,7 @@ echo " "
 sleep 10
 # INSTALL BASE REQUITREMENTS
 sudo apt update
-sudo apt install golang gccgo-go golang-go tor -y
-sudo apt install finalrecon net-tools dnsutils python2.7 libxml2-utils python3-pip python2.7-dev python3-docutils -y
+sudo apt install golang gccgo-go golang-go tor finalrecon net-tools dnsutils python2.7 libxml2-utils python3-pip python2.7-dev python3-docutils -y
 sudo apt install inetutils-traceroute geoip-bin geoip-database python3-dnspython python3-tld python3-geoip python3-whois python3-requests -y
 sudo apt install git-all python3-ssdeep software-properties-common monit debsums apt-transport-https apt-show-versions -y
 pip install poetry
