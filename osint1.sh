@@ -24,8 +24,12 @@ mkdir $udir
 sleep 6
 # twint
 twint -u $uname --followers --user-full --email --phone -o twint.txt
+sed -i -e '1iTwint files\' twint.txt
+sed -i -e '2i***************************\' twint.txt
 # Sherlock see https://github.com/sherlock-project/sherlock#installation
 sherlock --verbose $uname $umail --output sherly.txt --xlsx sherly.xlsx
+sed -i -e '1iSherlock files\' sherly.txt
+sed -i -e '2i***************************\' allrep.txt
 # python3 sherlock user1 user2 user3
 # Accounts found will be stored in an individual text file with the corresponding username (e.g user123.txt).
 # MOSINT see https://www.geeksforgeeks.org/mosint-osint-tool-for-emails-in-kali-linux/
@@ -37,12 +41,16 @@ sherlock --verbose $uname $umail --output sherly.txt --xlsx sherly.xlsx
 # mosint set breachdirectory <58fff0d5d5msh8b2308b757609ebp1dd419jsn2dbc042b4e27>
 #
 mosint $umail > mosint.txt
+sed -i -e '1iMOSINT .txt files\' mosint.txt
+sed -i -e '2i***************************\' mosint.txt
 # socan
 python3 -m social-analyzer --username "$uname" > socan.txt
+sed -i -e '1iSocial analyser .txt files\' socan.txt
+sed -i -e '2i***************************\' socan.txt
 # local storage ready for upload to client's container
 cat *.txt > allrep.txt
 sed -i -e '1iAll OSINT .txt files\' allrep.txt
-sed -i -e '2i***************************\' allrep.txt
+sed -i -e '2i******************************************************\' allrep.txt
 mv *.txt /$udir
 mv *.xlsx /$udir
 #
