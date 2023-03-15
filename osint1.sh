@@ -2,7 +2,7 @@
 # Nathan Jones nathan.jones@arcadeusops.com
 # udir= directory for reports and scan data
 # uname= username for social media searches eg "Knobby Knobs"
-# umail= email to search for in social media 
+# umail= email to search for in social media
 echo " "
 echo " This is osint1.sh for OSINT Scan and Passive Recon on a Username and Email address."
 echo " Provide a Username and Email to search for. You'll be asked where you want to store the Reports. "
