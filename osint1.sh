@@ -56,5 +56,3 @@ mv *.xlsx /$udir
 #
 echo " "
 echo " Your results are stored in directory $udir ."
-cd /
-cd root

@@ -71,5 +71,3 @@ mv *.xml /$udir
 #
 echo " "
 echo " Your results are stored in directory $udir and /root/RFTW ."
-cd /
-cd root
