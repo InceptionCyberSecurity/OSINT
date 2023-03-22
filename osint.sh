@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Nathan Jones nathan.jones@arcadeusops.com
-# userIP= target URL eg. google.com or IP address. Preferable to use domain name
+# userIP= target URL eg. google.com or IP address. Preferable to use domain name.
 # udir= directory for reports and scan data
 echo " This is osint.sh and is executes OSINT Scan and Passive Recon on a Target Domain. "
 echo " You will need a Target Domain. You'll be asked where you want to store the Reports. "
@@ -12,6 +12,7 @@ read -p "Enter the local directory for reports to be saved to e.g MyStuff : " ud
 echo "Your local directory is : $udir"
 echo " "
 echo " These OSINT scripts may take along time to run so grab a coffee! "
+echo " NOTE!!!!! Don't forget to insert your API Keys in theHarvester."
 echo " osint.sh will start automatically ........ "
 mkdir $udir
 sleep 6
