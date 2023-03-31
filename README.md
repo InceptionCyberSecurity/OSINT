@@ -15,7 +15,7 @@ Use your own APIs for Shodan, theHarvester, MOSINT, Sherlock and Twint. <br/>
 
 # Scripts
 install.sh installs a few extras. up.sh updates the base, installed Kali OS. <br/>
-osint.sh runs the scripts and saves output to local storage. Follow the instruction in the osint.sh file comments. <br/>
+osint.sh and osint1.sh run the individual commands and saves output to local storage. Follow the instruction in the osint.sh and osint1.sh file comments. <br/>
 
 # SSH
 Use port 1965 or higher if you want to be extra security minded. Use UFW firewall. <br/>
