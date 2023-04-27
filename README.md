@@ -9,8 +9,7 @@ sudo chmod 755 *.sh <br/>
 sudo ./install.sh <br/>
 rm install.sh <br/>
 <br/>
-NOTE: Make sure that torrc is configured to SOCKS_PORT localhost:9050 <br/>
-Use your own APIs for Shodan, theHarvester, MOSINT, Sherlock and Twint. <br/>
+NOTE: Make sure that torrc is configured to SOCKS_PORT localhost:9050. Use your own APIs for Shodan, theHarvester, MOSINT, Sherlock and Twint. <br/>
 
 # Scripts
 install.sh installs a few extras. up.sh updates the base, installed Kali OS. <br/>
