@@ -1,5 +1,5 @@
 # INTRO
-A set of OSINT commands all in two scripts for OSNIT and Passive Recon. Saves results to files for further processing as necessary. <br/>
+A set of BASH-based commands in two scripts for OSINT and Passive Recon. Saves results to files for further processing as necessary. <br/>
 Includes passive scanning using Nmap. Essential to run these through Kali Linux in VirtualBox. Written by Nathan Jones nathan.jones@arcadeusops.com. <br/>
 
 # INSTALLATION
