@@ -1,5 +1,5 @@
 #!/bin/bash
-# use only on Kali
+# use only on Kali Linux
 sudo apt update
 sudo apt upgrade -y && sudo apt dist-upgrade -y
 sudo apt autoclean -y && sudo apt autoremove -y
