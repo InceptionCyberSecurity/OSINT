@@ -1,27 +1,25 @@
 #!/usr/bin/env bash
-# Nathan Jones nathan.jones@arcadeusops.com
-# udir= directory for reports and scan data
-# uname= username for social media searches eg "Knobby Knobs"
-# umail= email to search for in social media
-echo " "
-echo " This is osint1.sh for OSINT Scan and Passive Recon on a Username and Email address."
-echo " Provide a Username and Email to search for. You'll be asked where you want to store the Reports. "
-echo " NOTE:  osint.sh uses a specified Domain Name; osint1.sh uses a specified Username/Email. "
-echo " "
-read -p "Enter username e.g. Bobby Bobson or bobbybobson: " uname
-echo "Your target username is : $uname"
-echo " "
-read -p "Enter the email to search for e.g someone@someserver.com: " umail
-echo "Your target email is : $umail"
-echo " "
-read -p "Enter the local directory for reports to be saved to e.g MyStuff : " udir
-echo "Your local directory is : $udir"
-echo " "
-echo " These OSINT scripts may take a long time to run so grab a coffee! "
-echo " NOTE!!!!! Don't forget to insert your API Keys in Sherlock, MOSINT and Twint. "
-echo " osint.sh will start automatically ........ "
-mkdir $udir
-sleep 6
+# Nathan Jones nwj@inception.bz
+# INSTALL FIRST https://github.com/twintproject/twint https://github.com/sherlock-project/sherlock https://github.com/alpkeskin/mosint
+pip3 install twint
+# clone the repo
+git clone https://github.com/sherlock-project/sherlock.git
+# change the working directory to sherlock
+cd sherlock
+# install the requirements
+python3 -m pip install -r requirements.txt
+#
+go install -v github.com/alpkeskin/mosint/v3/cmd/mosint@latest
+#
+sudo apt-get update
+sudo apt-get install python3 python3-pip
+pip3 install social-analyzer
+#
+n=$1 # Username to search
+s=$2 # user email to search
+
+# NOTE!!!!! Don't forget to insert your API Keys in Sherlock, MOSINT and Twint
+
 # twint
 twint -u $uname --followers --user-full --email --phone -o twint.txt
 sed -i -e '1iTwint files\' twint.txt
@@ -47,12 +45,16 @@ sed -i -e '2i***************************\' mosint.txt
 python3 -m social-analyzer --username "$uname" > socan.txt
 sed -i -e '1iSocial analyser .txt files\' socan.txt
 sed -i -e '2i***************************\' socan.txt
-# local storage ready for upload to client's container
+
 cat *.txt > allrep.txt
 sed -i -e '1iAll OSINT .txt files\' allrep.txt
 sed -i -e '2i******************************************************\' allrep.txt
-mv *.txt /$udir
-mv *.xlsx /$udir
-#
-echo " "
-echo " Your results are stored in directory $udir ."
+
+# zip
+pass=$(openssl rand -base64 6)
+zip --password ${pass} OSINT1.zip allrep.txt
+
+# Email Report and Password
+echo " OSINT Report OSINT1.zi" | mail -s "MOSINT SHERLOCK TWINT Report for "$1" " -A OSINT1.zi $2
+echo " Your password for "$1" OSINT1.zi is "${pass}" " | mail -s "Your OSINT1.zi Info" $2
+cd ..

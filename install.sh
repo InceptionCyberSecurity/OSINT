@@ -1,14 +1,6 @@
 #!/bin/bash
-# OSINT 2023 by ducatinat nathan.jones@arcadeusops.com; Kali linux
-# RUN THIS FILE AS SUDO
-# big.txt in /user/share/wordlists/dirb/ https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/big.txt
-clear
-echo " "
-echo " Welcome to the OSINT Installation Script for public domain info harvesting. Base OS is Kali. "
-echo " IMPORTTANT !!!!  Make sure that torrc is configured to SOCKS_PORT localhost:9050 "
-echo " This script will setup all requirements. Installation will automatically start ........ "
-echo " "
-sleep 10
+# big.txt https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/big.txt
+
 # INSTALL BASE REQUITREMENTS
 sudo apt update
 sudo apt install golang gccgo-go golang-go tor finalrecon net-tools dnsutils python2.7 libxml2-utils python3-pip python2.7-dev python3-docutils -y
@@ -59,14 +51,9 @@ git clone https://github.com/six2dez/reconftw
 cd reconftw
 ./install.sh
 cd ..
-echo " OSINT system installation is complete. Updating all ... See README, osint.sh and osint1.sh for usage. "
-sleep 2
+
 # update and reboot
 sudo nmap --script-update
 sudo apt update
 sudo apt autoclean -y && sudo apt autoremove -y
 chmod 755 *.sh
-clear
-echo " Server will now automatically reboot. Usage is ./osint.sh OR osint1.sh then follow onscreen prompts. "
-sleep 4
-sudo reboot
